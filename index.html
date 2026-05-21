@@ -14,6 +14,7 @@
   <meta property="og:image" content="https://guiafrutiferas.vercel.app/images/hero.webp">
   <meta property="og:locale" content="pt_BR">
 
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌳</text></svg>">
   <link rel="preload" href="/images/hero.webp" as="image" type="image/webp" fetchpriority="high">
 
   <style>
@@ -201,6 +202,14 @@
 
     /* ── FOOTER ── */
     footer{background:#0f2a1f;padding:32px 16px;text-align:center;font-size:.875rem;color:#88a89a}
+
+    /* ── STICKY CTA (mobile only) ── */
+    #sticky-cta{display:none;position:fixed;bottom:0;left:0;right:0;background:#1a3c2e;padding:10px 16px 14px;z-index:9999;box-shadow:0 -2px 16px rgba(0,0,0,.3)}
+    #sticky-cta.visible{display:block}
+    @media(min-width:640px){#sticky-cta.visible{display:none}}
+    .sticky-cta-btn{display:block;width:100%;background:#39ff14;color:#1a3c2e;font-weight:800;font-size:1rem;padding:14px 16px;border-radius:10px;text-align:center}
+    .sticky-cta-note{text-align:center;font-size:.7rem;color:rgba(255,255,255,.55);margin-top:5px}
+    @media(max-width:639px){body{padding-bottom:76px}}
   </style>
 </head>
 <body>
@@ -209,10 +218,22 @@
      TOP BANNER
 ═══════════════════════════════════════ -->
 <div class="top-banner">
-  🎁 OFERTA EXCLUSIVA APENAS HOJE — <span id="banner-date"></span>
+  ⏰ OFERTA ENCERRA EM: <span id="countdown" style="font-variant-numeric:tabular-nums;letter-spacing:.05em">--:--:--</span>
 </div>
 <script>
-  (function(){var d=new Date(),dd=String(d.getDate()).padStart(2,'0'),mm=String(d.getMonth()+1).padStart(2,'0');document.getElementById('banner-date').textContent=dd+'/'+mm+'/'+d.getFullYear()})();
+  (function(){
+    function tick(){
+      var now=new Date(),midnight=new Date();
+      midnight.setHours(24,0,0,0);
+      var diff=midnight-now;
+      var h=Math.floor(diff/3600000);
+      var m=Math.floor((diff%3600000)/60000);
+      var s=Math.floor((diff%60000)/1000);
+      var el=document.getElementById('countdown');
+      if(el) el.textContent=String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+    }
+    tick();setInterval(tick,1000);
+  })();
 </script>
 
 <!-- ═══════════════════════════════════════
@@ -632,7 +653,7 @@
     <div>
       <span class="guarantee-badge">Risco Zero</span>
       <h2 class="guarantee-title">Garantia de 7 dias, sem burocracia.</h2>
-      <p class="guarantee-text">Se você achar que o guia não vale o que pagou, basta enviar um e-mail e devolvemos seus R$10,00. Sem perguntas, sem complicações.</p>
+      <p class="guarantee-text">Se você achar que o guia não vale o que pagou, basta enviar um e-mail e devolvemos 100% do valor pago. Sem perguntas, sem complicações.</p>
     </div>
   </div>
 </section>
@@ -677,7 +698,7 @@
 
       <details class="faq-item">
         <summary>E se eu comprar e não conseguir aplicar?</summary>
-        <p class="faq-answer">Você tem 7 dias de garantia total. Se por qualquer motivo achar que o guia não funciona para o seu caso, manda um e-mail e devolvemos os R$10 integrais. Sem perguntas, sem burocracia, sem complicação.</p>
+        <p class="faq-answer">Você tem 7 dias de garantia total. Se por qualquer motivo achar que o guia não funciona para o seu caso, manda um e-mail e devolvemos 100% do valor pago. Sem perguntas, sem burocracia, sem complicação.</p>
       </details>
 
     </div>
@@ -720,6 +741,13 @@ window.addEventListener('load', function() {
   'https://connect.facebook.net/en_US/fbevents.js');
   fbq('init', '1001844958969175');
   fbq('track', 'PageView');
+  fbq('track', 'ViewContent', {
+    content_name: 'Guia Frutíferas em Vaso',
+    content_ids: ['guia-frutiferas'],
+    content_type: 'product',
+    value: 27.00,
+    currency: 'BRL'
+  });
 });
 </script>
 
@@ -744,6 +772,23 @@ function trackCheckout() {
     window.fbq('track', 'InitiateCheckout');
   }
 }
+</script>
+
+<!-- Sticky CTA (mobile) -->
+<div id="sticky-cta">
+  <a href="https://pay.lowify.com.br/go.php?offer=sdz5ih1" class="sticky-cta-btn" onclick="trackCheckout()">🍋 GARANTIR ACESSO AGORA — R$27</a>
+  <p class="sticky-cta-note">Pagamento único · Garantia 7 dias · PIX e Cartão</p>
+</div>
+<script>
+(function(){
+  var el=document.getElementById('sticky-cta');
+  var hero=document.querySelector('.hero');
+  if(!el||!hero) return;
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>hero.offsetHeight+80) el.classList.add('visible');
+    else el.classList.remove('visible');
+  },{passive:true});
+})();
 </script>
 
 </body>

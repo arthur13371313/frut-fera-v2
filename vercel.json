@@ -5,12 +5,6 @@
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=2592000, stale-while-revalidate=604800" }
       ]
-    },
-    {
-      "source": "/(.*\\.(ico|png|svg|webmanifest|xml|txt|css|js))",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=604800" }
-      ]
     }
   ]
 }

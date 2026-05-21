@@ -207,13 +207,7 @@
     /* ── FOOTER ── */
     footer{background:#0f2a1f;padding:32px 16px;text-align:center;font-size:.875rem;color:#88a89a}
 
-    /* ── STICKY CTA (mobile only) ── */
-    #sticky-cta{display:none;position:fixed;bottom:0;left:0;right:0;background:#1a3c2e;padding:10px 16px 14px;z-index:9999;box-shadow:0 -2px 16px rgba(0,0,0,.3)}
-    #sticky-cta.visible{display:block}
-    @media(min-width:640px){#sticky-cta.visible{display:none}}
-    .sticky-cta-btn{display:block;width:100%;background:#39ff14;color:#1a3c2e;font-weight:800;font-size:1rem;padding:14px 16px;border-radius:10px;text-align:center}
-    .sticky-cta-note{text-align:center;font-size:.7rem;color:rgba(255,255,255,.55);margin-top:5px}
-    @media(max-width:639px){body{padding-bottom:76px}}
+    @media(max-width:639px){body{padding-bottom:0}}
   </style>
 </head>
 <body>
@@ -793,22 +787,6 @@ function trackCheckout() {
 }
 </script>
 
-<!-- Sticky CTA (mobile) -->
-<div id="sticky-cta">
-  <a href="https://pay.lowify.com.br/checkout?product_id=Ym7Orh" class="sticky-cta-btn" onclick="trackCheckout()">🍋 GARANTIR ACESSO AGORA — R$27</a>
-  <p class="sticky-cta-note">Pagamento único · Garantia 7 dias · PIX e Cartão</p>
-</div>
-<script>
-(function(){
-  var el=document.getElementById('sticky-cta');
-  var hero=document.querySelector('.hero');
-  if(!el||!hero) return;
-  window.addEventListener('scroll',function(){
-    if(window.scrollY>hero.offsetHeight+80) el.classList.add('visible');
-    else el.classList.remove('visible');
-  },{passive:true});
-})();
-</script>
 
 </body>
 </html>

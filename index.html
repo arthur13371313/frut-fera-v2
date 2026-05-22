@@ -41,6 +41,7 @@
     .hero-img img{width:100%;height:auto;border-radius:12px;display:block}
     .hero-bullets{padding-top:12px;display:flex;flex-direction:column;gap:8px;text-align:left}
     .hero-bullet{display:flex;align-items:center;gap:8px;font-size:.85rem;color:#fff;font-weight:500;white-space:nowrap}
+    @media(max-width:768px){.hero-bullet{font-size:14px;padding:8px 12px;align-items:flex-start;line-height:1.4;white-space:normal}}
 
     /* ── QUICK OFFER ── */
     .quick-offer{background:#1a3c2e;padding:12px 24px 32px}
@@ -223,7 +224,7 @@
     var months=['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
     var d=new Date();
     var el=document.getElementById('banner-date');
-    if(el) el.textContent=d.getDate()+' de '+months[d.getMonth()]+' de '+d.getFullYear();
+    if(el) el.textContent=String(d.getDate()).padStart(2,'0')+'/'+String(d.getMonth()+1).padStart(2,'0')+'/'+d.getFullYear();
     function tick(){
       var now=new Date(),midnight=new Date();
       midnight.setHours(24,0,0,0);
@@ -245,7 +246,7 @@
   <div class="hero-inner">
     <h1>A FRUTA QUE VOCÊ COME TEM <span class="orange">AGROTÓXICO</span>. E <span class="orange">VOCÊ NÃO</span> TEM COMO SABER QUANTO.</h1>
     <p>Agora você pode cultivar a sua própria fruta em casa, em vaso, mesmo sem quintal e sem ter plantado nada na vida.</p>
-    <p style="margin-top:16px;font-size:.95rem;color:#d2e4d7;text-align:center">Tudo isso, gastando <span class="orange">menos do que uma semana de frutas no mercado.</span></p>
+    <p style="margin-top:16px;font-size:.95rem;color:#fff;text-align:center">Tudo isso, gastando menos do que<br>uma semana de frutas no mercado.</p>
     <div class="hero-img">
       <picture>
         <source
@@ -281,7 +282,7 @@
 <section class="pain-section">
   <div class="pain-inner">
     <h2 class="section-title">
-      Você já foi ao mercado, pegou uma fruta, <span class="orange">olhou o preço e deixou de volta na prateleira?</span>
+      Você já foi ao mercado, pegou uma fruta, <span class="orange">olhou o preço</span> e <span class="orange">deixou de volta na prateleira?</span>
     </h2>
     <p class="pain-intro">
       No supermercado, você nunca sabe quando a fruta foi colhida, com quantos agrotóxicos foi tratada, ou se vai durar mais do que dois dias.

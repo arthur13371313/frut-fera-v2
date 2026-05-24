@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Oferta Especial — Cultivar Agora</title>
+  <title>Sua compra foi aprovada — Cultivar Agora</title>
   <link rel="preload" href="https://scripts.converteai.net/e880d981-198a-43a3-8a4b-10fd69d1e3c3/players/6a0e35b13c2b1edfa3cdf6f6/v4/embed.html">
   <script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
   <link rel="preload" href="https://scripts.converteai.net/e880d981-198a-43a3-8a4b-10fd69d1e3c3/players/6a0e35b13c2b1edfa3cdf6f6/v4/player.js" as="script">
@@ -15,136 +15,123 @@
   <link rel="dns-prefetch" href="https://license.vturb.com">
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:#f0ebe0;color:#1a1a1a;line-height:1.5}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:#f2f2f2;color:#1a1a1a;line-height:1.5}
 
-    .top-bar{background:#1a3c2e;color:#fff;text-align:center;padding:10px 16px;font-size:.85rem;font-weight:600;letter-spacing:.03em}
-    .video-wrap{max-width:680px;margin:32px auto 0;padding:0 16px}
-    @media(max-width:768px){.video-wrap{padding:0 12px;margin-top:24px}}
+    .page{max-width:480px;margin:0 auto;padding:16px}
 
-    .hero{background:#1a3c2e;padding:40px 16px 48px;text-align:center}
-    .hero-tag{display:inline-block;background:#e8a23a;color:#fff;font-size:.75rem;font-weight:700;letter-spacing:.08em;padding:4px 12px;border-radius:20px;margin-bottom:16px;text-transform:uppercase}
-    .hero h1{color:#fff;font-size:1.6rem;font-weight:800;line-height:1.2;max-width:600px;margin:0 auto}
-    @media(min-width:640px){.hero h1{font-size:2.2rem}}
-    .hero h1 span{color:#e8a23a}
-    .hero-sub{color:#d2e4d7;margin-top:16px;font-size:1rem;max-width:500px;margin-left:auto;margin-right:auto}
+    .card{background:#fff;border-radius:16px;padding:24px 20px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.08)}
 
-    .offer-box{max-width:680px;margin:0 auto;padding:0 16px}
+    .headline{font-size:1.35rem;font-weight:800;text-align:center;color:#111;line-height:1.25;margin-bottom:16px}
+    .subtext{font-size:.95rem;color:#444;text-align:center;line-height:1.55;margin-bottom:20px}
 
-    .card{background:#fff;border-radius:16px;padding:32px 24px;margin-top:-24px;box-shadow:0 8px 32px rgba(0,0,0,.1)}
+    .video-wrap{margin:0 auto 20px;width:100%;max-width:400px}
 
-    .what-you-get{margin-bottom:28px}
-    .what-you-get h2{font-size:1.1rem;font-weight:700;color:#1a3c2e;margin-bottom:16px;text-align:center}
-    .item{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;font-size:.95rem;color:#2a2a2a}
-    .item-icon{color:#0f7865;font-size:1.1rem;flex-shrink:0;margin-top:2px}
+    .bullets{list-style:none;margin-bottom:20px}
+    .bullets li{display:flex;align-items:flex-start;gap:10px;font-size:.95rem;color:#222;margin-bottom:12px;line-height:1.4}
+    .bullets li svg{flex-shrink:0;margin-top:2px}
 
-    .divider{border:none;border-top:1px solid #e8e4dc;margin:24px 0}
+    .cta-statement{font-size:1.15rem;font-weight:800;color:#0f7865;text-align:center;margin-bottom:20px;line-height:1.3}
 
-    .price-block{text-align:center;margin-bottom:28px}
-    .price-label{font-size:.85rem;color:#888;margin-bottom:4px}
-    .price-old{font-size:1rem;color:#aaa;text-decoration:line-through;margin-bottom:4px}
-    .price-new{font-size:2.5rem;font-weight:800;color:#0f7865}
-    .price-note{font-size:.8rem;color:#888;margin-top:4px}
+    .price-pill{display:flex;align-items:center;justify-content:center;gap:8px;border:1.5px solid #ccc;border-radius:50px;padding:10px 24px;font-size:1rem;color:#111;margin:0 auto 8px;max-width:260px}
+    .price-pill strong{color:#0f7865;font-size:1.1rem}
 
-    .guarantee{display:flex;align-items:center;gap:12px;background:#f0faf5;border:1px solid #b2ddc8;border-radius:10px;padding:12px 16px;margin-bottom:28px}
-    .guarantee-icon{font-size:2rem;flex-shrink:0}
-    .guarantee-text{font-size:.85rem;color:#1a3c2e;font-weight:500}
-
-    .buttons{display:flex;flex-direction:column;align-items:center;gap:12px}
+    .btn-accept{
+      display:block;width:100%;background:#22c55e;color:#fff;font-size:1rem;font-weight:800;
+      padding:18px 24px;border-radius:10px;border:none;cursor:pointer;text-align:center;
+      letter-spacing:.04em;text-transform:uppercase;margin-bottom:14px
+    }
 
     cakto-upsell-accept::part(button){
-      background-color:#0f7865;
+      background-color:#22c55e;
       color:#fff;
       font-size:1rem;
-      font-weight:700;
-      padding:16px 32px;
-      border-radius:8px;
+      font-weight:800;
+      padding:18px 24px;
+      border-radius:10px;
       border:none;
       cursor:pointer;
       width:100%;
-      max-width:480px;
-      letter-spacing:.02em;
+      letter-spacing:.04em;
+      text-transform:uppercase;
     }
     cakto-upsell-reject::part(button){
       background:transparent;
-      color:#999;
+      color:#555;
       font-size:.8rem;
+      font-weight:700;
       text-decoration:underline;
+      text-transform:uppercase;
       border:none;
       cursor:pointer;
       padding:4px;
+      display:block;
+      text-align:center;
+      width:100%;
     }
 
-    .footer{text-align:center;padding:32px 16px;font-size:.75rem;color:#999}
+    .footer{text-align:center;padding:16px;font-size:.72rem;color:#aaa}
   </style>
 </head>
 <body>
 
-<div class="top-bar">⚠️ Atenção — Esta oferta aparece uma única vez e não estará disponível depois</div>
-
-<div class="hero">
-  <div class="hero-tag">Oferta exclusiva pós-compra</div>
-  <h1>Antes de ir para a área de membros,<br><span>aproveite essa condição especial</span></h1>
-  <p class="hero-sub">Você acabou de garantir o guia. Agora pode adicionar 30 dias de acompanhamento direto por um preço que não vai se repetir.</p>
-</div>
-
-<div class="video-wrap">
-  <div id="ifr_6a0e35b13c2b1edfa3cdf6f6_wrapper" style="margin: 0 auto; width: 100%; max-width: 400px;">
-    <div style="position: relative; padding: 177.77777777777777% 0 0 0;" id="ifr_6a0e35b13c2b1edfa3cdf6f6_aspect">
-      <iframe frameborder="0" allowfullscreen src="about:blank" id="ifr_6a0e35b13c2b1edfa3cdf6f6" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" referrerpolicy="origin" onload="this.onload=null, this.src='https://scripts.converteai.net/e880d981-198a-43a3-8a4b-10fd69d1e3c3/players/6a0e35b13c2b1edfa3cdf6f6/v4/embed.html' +(location.search||'?') +'&vl=' +encodeURIComponent(location.href)"></iframe>
-    </div>
-  </div>
-</div>
-
-<div class="offer-box">
+<div class="page">
   <div class="card">
+    <h1 class="headline">SUA COMPRA FOI APROVADA!<br>MAS SUA ÁRVORE PODE MORRER<br>NOS PRIMEIROS 30 DIAS...</h1>
+    <p class="subtext">Saber plantar não é o mesmo que saber o que fazer amanhã de manhã. A maioria trava logo depois do plantio, e perde a muda sem entender qual foi o seu erro.</p>
 
-    <div class="what-you-get">
-      <h2>O que você recebe nesses 30 dias:</h2>
-      <div class="item"><span class="item-icon">✅</span><span>Acesso direto para tirar dúvidas sobre o cultivo</span></div>
-      <div class="item"><span class="item-icon">✅</span><span>Suporte para escolher a espécie certa para o seu espaço</span></div>
-      <div class="item"><span class="item-icon">✅</span><span>Acompanhamento nas primeiras semanas — a fase mais crítica</span></div>
-      <div class="item"><span class="item-icon">✅</span><span>Respostas rápidas para não perder tempo nem planta</span></div>
+    <div class="video-wrap">
+      <div id="ifr_6a0e35b13c2b1edfa3cdf6f6_wrapper" style="margin: 0 auto; width: 100%; max-width: 400px;">
+        <div style="position: relative; padding: 177.77777777777777% 0 0 0;" id="ifr_6a0e35b13c2b1edfa3cdf6f6_aspect">
+          <iframe frameborder="0" allowfullscreen src="about:blank" id="ifr_6a0e35b13c2b1edfa3cdf6f6" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" referrerpolicy="origin" onload="this.onload=null, this.src='https://scripts.converteai.net/e880d981-198a-43a3-8a4b-10fd69d1e3c3/players/6a0e35b13c2b1edfa3cdf6f6/v4/embed.html' +(location.search||'?') +'&vl=' +encodeURIComponent(location.href)"></iframe>
+        </div>
+      </div>
     </div>
 
-    <hr class="divider">
+    <ul class="bullets">
+      <li>
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#0f7865"/><path d="M5.5 10.5l3 3 6-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Vai saber exatamente o que fazer no dia 1, sem travar.
+      </li>
+      <li>
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#0f7865"/><path d="M5.5 10.5l3 3 6-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Sabe regar na quantidade certa, no momento certo.
+      </li>
+      <li>
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#0f7865"/><path d="M5.5 10.5l3 3 6-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Identifica se a planta está bem antes do problema aparecer.
+      </li>
+      <li>
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#0f7865"/><path d="M5.5 10.5l3 3 6-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Faz a primeira adubação sem risco de matar a muda.
+      </li>
+    </ul>
 
-    <div class="price-block">
-      <div class="price-label">Valor normal</div>
-      <div class="price-old">R$ 97,00</div>
-      <div class="price-new">R$ 37,00</div>
-      <div class="price-note">Pagamento único · Só aparece agora</div>
-    </div>
+    <p class="cta-statement">No dia 30, a sua planta vai estar<br>viva e crescendo!</p>
 
-    <div class="guarantee">
-      <div class="guarantee-icon">🛡️</div>
-      <div class="guarantee-text">Garantia de 7 dias. Se não gostar, devolvemos tudo sem perguntas.</div>
-    </div>
+    <div class="price-pill">Por apenas <strong>R$ 37,00</strong></div>
+  </div>
 
-    <div class="buttons">
-      <cakto-upsell-buttons>
-        <cakto-upsell-accept
-          bg-color="#0f7865"
-          text-color="#ffffff"
-          upsell-accept-url="members_area"
-          offer-id="37sdvzd"
-          app-base-url="https://app.cakto.com.br"
-          offer-type="upsell"
-          upsell-reject-url="https://www.cultivaragora.store/downsell.html"
-        >
-          Sim, quero aproveitar a oferta
-        </cakto-upsell-accept>
-        <cakto-upsell-reject upsell-reject-url="https://www.cultivaragora.store/downsell.html">
-          Não, eu não quero aproveitar a oferta
-        </cakto-upsell-reject>
-      </cakto-upsell-buttons>
-    </div>
-
+  <div class="card">
+    <cakto-upsell-buttons>
+      <cakto-upsell-accept
+        bg-color="#22c55e"
+        text-color="#ffffff"
+        upsell-accept-url="members_area"
+        offer-id="wkbaexh"
+        app-base-url="https://app.cakto.com.br"
+        offer-type="upsell"
+        upsell-reject-url="members_area"
+      >
+        LIBERAR PLANO RAIZ
+      </cakto-upsell-accept>
+      <cakto-upsell-reject upsell-reject-url="members_area">
+        NÃO OBRIGADO, VOU DESCOBRIR SOZINHO O QUE FAZER A CADA DIA
+      </cakto-upsell-reject>
+    </cakto-upsell-buttons>
   </div>
 </div>
 
-<div class="footer">
-  © Cultivar Agora · Todos os direitos reservados
-</div>
+<div class="footer">© Cultivar Agora · Todos os direitos reservados</div>
 
 <script type="text/javascript" src="https://caktoscripts.nyc3.cdn.digitaloceanspaces.com/upsell.js"></script>
 </body>

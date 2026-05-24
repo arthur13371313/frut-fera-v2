@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Espera — Temos uma condição melhor para você</title>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:#f0ebe0;color:#1a1a1a;line-height:1.5}
+
+    .top-bar{background:#c0392b;color:#fff;text-align:center;padding:10px 16px;font-size:.85rem;font-weight:700;letter-spacing:.03em}
+
+    .hero{background:#1a3c2e;padding:40px 16px 48px;text-align:center}
+    .hero-tag{display:inline-block;background:#c0392b;color:#fff;font-size:.75rem;font-weight:700;letter-spacing:.08em;padding:4px 12px;border-radius:20px;margin-bottom:16px;text-transform:uppercase}
+    .hero h1{color:#fff;font-size:1.6rem;font-weight:800;line-height:1.2;max-width:600px;margin:0 auto}
+    @media(min-width:640px){.hero h1{font-size:2.1rem}}
+    .hero h1 span{color:#e8a23a}
+    .hero-sub{color:#d2e4d7;margin-top:16px;font-size:1rem;max-width:500px;margin-left:auto;margin-right:auto}
+
+    .offer-box{max-width:680px;margin:0 auto;padding:0 16px}
+
+    .card{background:#fff;border-radius:16px;padding:32px 24px;margin-top:-24px;box-shadow:0 8px 32px rgba(0,0,0,.1)}
+
+    .highlight-box{background:#fff8ec;border:2px solid #e8a23a;border-radius:10px;padding:16px;margin-bottom:24px;text-align:center}
+    .highlight-box p{font-size:.95rem;color:#1a1a1a;font-weight:600}
+    .highlight-box span{color:#c0392b}
+
+    .what-you-get{margin-bottom:28px}
+    .what-you-get h2{font-size:1.1rem;font-weight:700;color:#1a3c2e;margin-bottom:16px;text-align:center}
+    .item{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;font-size:.95rem;color:#2a2a2a}
+    .item-icon{color:#0f7865;font-size:1.1rem;flex-shrink:0;margin-top:2px}
+
+    .divider{border:none;border-top:1px solid #e8e4dc;margin:24px 0}
+
+    .price-block{text-align:center;margin-bottom:28px}
+    .price-label{font-size:.85rem;color:#888;margin-bottom:4px}
+    .price-old{font-size:1rem;color:#aaa;text-decoration:line-through;margin-bottom:4px}
+    .price-new{font-size:2.5rem;font-weight:800;color:#c0392b}
+    .price-note{font-size:.8rem;color:#888;margin-top:4px}
+
+    .guarantee{display:flex;align-items:center;gap:12px;background:#f0faf5;border:1px solid #b2ddc8;border-radius:10px;padding:12px 16px;margin-bottom:28px}
+    .guarantee-icon{font-size:2rem;flex-shrink:0}
+    .guarantee-text{font-size:.85rem;color:#1a3c2e;font-weight:500}
+
+    .buttons{display:flex;flex-direction:column;align-items:center;gap:12px}
+
+    cakto-upsell-accept::part(button){
+      background-color:#c0392b;
+      color:#fff;
+      font-size:1rem;
+      font-weight:700;
+      padding:16px 32px;
+      border-radius:8px;
+      border:none;
+      cursor:pointer;
+      width:100%;
+      max-width:480px;
+      letter-spacing:.02em;
+    }
+    cakto-upsell-reject::part(button){
+      background:transparent;
+      color:#999;
+      font-size:.8rem;
+      text-decoration:underline;
+      border:none;
+      cursor:pointer;
+      padding:4px;
+    }
+
+    .footer{text-align:center;padding:32px 16px;font-size:.75rem;color:#999}
+  </style>
+</head>
+<body>
+
+<div class="top-bar">⚠️ Espera — criamos uma condição especial só para você</div>
+
+<div class="hero">
+  <div class="hero-tag">Oferta de última chance</div>
+  <h1>Tudo bem, entendemos.<br><span>Mas antes de sair, veja isso:</span></h1>
+  <p class="hero-sub">Sabemos que o preço anterior pode ter pesado. Por isso preparamos uma condição menor, uma vez só.</p>
+</div>
+
+<div class="offer-box">
+  <div class="card">
+
+    <div class="highlight-box">
+      <p>Reduzimos o valor para que você <span>não perca o suporte</span> nas primeiras semanas — que é quando mais importa.</p>
+    </div>
+
+    <div class="what-you-get">
+      <h2>O que você ainda recebe:</h2>
+      <div class="item"><span class="item-icon">✅</span><span>Acesso direto para tirar dúvidas sobre o cultivo</span></div>
+      <div class="item"><span class="item-icon">✅</span><span>Suporte para escolher a espécie certa para o seu espaço</span></div>
+      <div class="item"><span class="item-icon">✅</span><span>Acompanhamento nas primeiras semanas</span></div>
+      <div class="item"><span class="item-icon">✅</span><span>Respostas rápidas para não perder tempo nem planta</span></div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="price-block">
+      <div class="price-label">De R$ 37,00 por apenas</div>
+      <div class="price-new">R$ 17,00</div>
+      <div class="price-note">Pagamento único · Só aparece agora · Não volta depois</div>
+    </div>
+
+    <div class="guarantee">
+      <div class="guarantee-icon">🛡️</div>
+      <div class="guarantee-text">Garantia de 7 dias. Se não gostar, devolvemos tudo sem perguntas.</div>
+    </div>
+
+    <div class="buttons">
+      <cakto-upsell-buttons>
+        <cakto-upsell-accept
+          bg-color="#c0392b"
+          text-color="#ffffff"
+          upsell-accept-url="members_area"
+          offer-id="b2k7fo5"
+          app-base-url="https://app.cakto.com.br"
+          offer-type="downsell"
+          upsell-reject-url="members_area"
+        >
+          Sim, quero aproveitar essa condição
+        </cakto-upsell-accept>
+        <cakto-upsell-reject upsell-reject-url="members_area">
+          Não, prefiro ir sem o suporte
+        </cakto-upsell-reject>
+      </cakto-upsell-buttons>
+    </div>
+
+  </div>
+</div>
+
+<div class="footer">
+  © Cultivar Agora · Todos os direitos reservados
+</div>
+
+<script type="text/javascript" src="https://caktoscripts.nyc3.cdn.digitaloceanspaces.com/upsell.js"></script>
+</body>
+</html>

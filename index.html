@@ -422,100 +422,73 @@
     }
 
     /* ── PLANS ── */
-    .plans-section {
-      background: var(--green);
-      padding: 4.5rem 5%;
-      text-align: center;
-    }
-    .plans-note {
-      color: rgba(255,255,255,0.9);
-      font-size: 1rem;
-      font-weight: 600;
-      margin: 1.5rem 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.4rem;
-    }
+    .plans-section { background: #1a3a1a; padding: 4.5rem 5%; text-align: center; }
     .plans-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      max-width: 720px;
-      margin: 0 auto;
-      align-items: start;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1.5rem; max-width: 760px; margin: 2rem auto 0; align-items: start;
     }
-    .plan-card {
-      background: #fff;
-      border-radius: 1.25rem;
-      padding: 2rem 1.5rem;
-      position: relative;
-      text-align: center;
-    }
+    .plan-card { border-radius: 1.25rem; padding: 2rem 1.5rem; position: relative; text-align: left; }
     .plan-popular-badge {
-      position: absolute;
-      top: -14px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--orange);
-      color: #fff;
-      font-size: 0.7rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 0.3rem 1rem;
-      border-radius: 2rem;
-      white-space: nowrap;
+      position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+      background: #ffd700; color: #1a1a1a; font-size: 0.7rem; font-weight: 800;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.3rem 1rem; border-radius: 2rem; white-space: nowrap;
     }
-    .plan-title {
-      font-weight: 900;
-      font-size: 1rem;
-      color: var(--green);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.75rem;
+    /* Básico */
+    .plan-card.basico { background: #fff; }
+    .plan-card.basico .plan-title {
+      font-weight: 900; font-size: 1rem; color: #1a3a1a;
+      text-transform: uppercase; letter-spacing: 0.05em;
+      text-align: center; margin-bottom: 1.25rem;
     }
-    .plan-old {
-      font-size: 0.875rem;
-      color: #aaa;
-      text-decoration: line-through;
-      margin-bottom: 0.25rem;
+    .plan-card.basico .plan-old { font-size:.875rem; color:#aaa; text-decoration:line-through; text-align:center; }
+    .plan-card.basico .plan-price { font-size:2.25rem; font-weight:900; color:#2a7a2a; text-align:center; line-height:1; margin:.2rem 0; }
+    .plan-card.basico .plan-period { font-size:.8rem; color:#888; text-align:center; margin-bottom:1.5rem; }
+    .plan-basico-items { list-style:none; margin-bottom:1.5rem; display:flex; flex-direction:column; gap:.6rem; }
+    .plan-basico-items li { font-size:.9rem; color:#444; display:flex; align-items:center; gap:.4rem; }
+    .btn-basico {
+      display:block; width:100%; background:#e07b39; color:#fff;
+      font-weight:800; font-size:.9375rem; text-transform:uppercase;
+      text-align:center; padding:.9rem 1rem; border-radius:2rem;
+      text-decoration:none; transition:background .2s;
     }
-    .plan-price {
-      font-size: 2.25rem;
-      font-weight: 900;
-      color: #2a7a2a;
-      line-height: 1;
-      margin-bottom: 0.25rem;
+    .btn-basico:hover { background:#c96a28; }
+    .plan-footnote { font-size:.75rem; color:#aaa; text-align:center; margin-top:.75rem; }
+    /* Completo */
+    .plan-card.completo { background: #e07b39; }
+    .plan-card.completo .plan-title {
+      font-weight:900; font-size:1rem; color:#fff;
+      text-transform:uppercase; letter-spacing:.05em;
+      text-align:center; margin-bottom:1.25rem;
     }
-    .plan-period {
-      font-size: 0.875rem;
-      color: #888;
-      margin-bottom: 1.25rem;
+    .plan-completo-items { list-style:none; margin-bottom:1.25rem; display:flex; flex-direction:column; }
+    .plan-completo-item { padding:.75rem 0; border-bottom:1px solid rgba(255,255,255,.3); }
+    .plan-completo-item:last-child { border-bottom:none; }
+    .plan-completo-item-header { display:flex; align-items:flex-start; gap:.4rem; }
+    .plan-completo-item-name { font-size:.875rem; font-weight:700; color:#fff; flex:1; }
+    .plan-completo-item-desc { font-size:.78rem; color:rgba(255,255,255,.85); margin:.25rem 0 .35rem 1.4rem; line-height:1.4; }
+    .plan-completo-item-anchor { display:flex; gap:.5rem; align-items:center; margin-left:1.4rem; }
+    .plan-completo-item-old { font-size:.75rem; color:rgba(255,255,255,.6); text-decoration:line-through; }
+    .plan-completo-item-tag { font-size:.75rem; font-weight:800; color:#fff; }
+    .plan-total-box { background:rgba(0,0,0,.18); border-radius:.75rem; padding:1rem; text-align:center; margin-bottom:1.25rem; }
+    .plan-total-label { font-size:.75rem; color:rgba(255,255,255,.8); margin-bottom:.15rem; }
+    .plan-total-old-price { font-size:.875rem; color:rgba(255,255,255,.65); text-decoration:line-through; }
+    .plan-total-price { font-size:2.25rem; font-weight:900; color:#fff; line-height:1; margin:.2rem 0; }
+    .plan-total-period { font-size:.8rem; color:rgba(255,255,255,.8); }
+    .btn-completo {
+      display:block; width:100%; background:#1a3a1a; color:#fff;
+      font-weight:800; font-size:.9375rem; text-transform:uppercase;
+      text-align:center; padding:.9rem 1rem; border-radius:2rem;
+      text-decoration:none; transition:background .2s;
     }
-    .plan-items {
-      list-style: none;
-      text-align: left;
-      margin-bottom: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-    }
-    .plan-items li {
-      font-size: 0.875rem;
-      color: var(--text-mid);
-      line-height: 1.4;
-      display: flex;
-      align-items: flex-start;
-      gap: 0.4rem;
-    }
-    .plan-items .striked { color: #aaa; text-decoration: line-through; }
-    .plan-items .gratis { color: #2a7a2a; font-weight: 700; }
-    .plan-total-old {
-      font-size: 0.875rem;
-      color: #aaa;
-      text-decoration: line-through;
-      margin-bottom: 0.25rem;
+    .btn-completo:hover { background:#2a5a2a; }
+    .plan-footnote-white { font-size:.75rem; color:rgba(255,255,255,.7); text-align:center; margin-top:.75rem; }
+    @media (max-width:680px) {
+      .plans-grid { grid-template-columns:1fr; }
+      .plan-card.completo { order:-1; }
+      .plan-card { padding:2rem 1.25rem; }
+      .plan-total-price { font-size:1.875rem; }
+      .plan-card.basico .plan-price { font-size:1.875rem; }
     }
 
     /* ── GUARANTEE ── */
@@ -635,11 +608,9 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 680px) {
       .benefits-grid { grid-template-columns: 1fr; }
-      .plans-grid { grid-template-columns: 1fr; }
       .ba-grid { grid-template-columns: 1fr; }
       .bonus-card { flex-direction: column; }
       .bonus-pricing { text-align: left; }
-      .plan-card { padding: 1.75rem 1.25rem; }
     }
   </style>
 </head>
@@ -850,38 +821,59 @@
 
   <!-- PLANS -->
   <section class="plans-section" id="planos">
-    <h2 class="section-headline white" style="margin-bottom:0.5rem;">ESCOLHA SEU PLANO</h2>
-    <p class="plans-note">⭐ MAIS POPULAR — O Plano Completo inclui os 3 bônus por apenas R$10 a mais.</p>
+    <h2 class="section-headline white">ESCOLHA SEU PLANO</h2>
     <div class="plans-grid">
 
       <!-- BÁSICO -->
-      <div class="plan-card">
-        <div class="plan-title">Plano Básico</div>
+      <div class="plan-card basico">
+        <div class="plan-title">PLANO BÁSICO</div>
         <div class="plan-old">De R$47,00</div>
         <div class="plan-price">R$17,90</div>
         <div class="plan-period">à vista no PIX</div>
-        <ul class="plan-items">
-          <li><span>✅</span> O Adubo Milagroso, a fórmula completa</li>
+        <ul class="plan-basico-items">
+          <li><span>✅</span> O Adubo Milagroso — a fórmula completa</li>
           <li><span>✅</span> Acesso imediato</li>
           <li><span>✅</span> Garantia de 7 dias</li>
         </ul>
-        <a href="#planos" class="btn btn-sm" style="width:100%; text-align:center;">QUERO O PLANO BÁSICO</a>
+        <a href="#planos" class="btn-basico">QUERO O PLANO BÁSICO</a>
+        <p class="plan-footnote">Pagamento único · Garantia 7 dias</p>
       </div>
 
       <!-- COMPLETO -->
-      <div class="plan-card">
-        <span class="plan-popular-badge">⭐ Mais Popular</span>
-        <div class="plan-title">Plano Completo</div>
-        <ul class="plan-items" style="margin-bottom:0.75rem;">
-          <li><span>✅</span> <span>O Adubo Milagroso &nbsp;<span class="striked">De R$47,00</span>&nbsp; Incluído</span></li>
-          <li><span>✅</span> <span>Cultivando Frutíferas em Vaso &nbsp;<span class="striked">De R$27,00</span>&nbsp; <span class="gratis">Grátis</span></span></li>
-          <li><span>✅</span> <span>Calendário de Colheita por Espécie &nbsp;<span class="striked">De R$17,00</span>&nbsp; <span class="gratis">Grátis</span></span></li>
-          <li><span>✅</span> <span>100 Receitas com as Frutas &nbsp;<span class="striked">De R$27,00</span>&nbsp; <span class="gratis">Grátis</span></span></li>
+      <div class="plan-card completo">
+        <span class="plan-popular-badge">⭐ MAIS POPULAR</span>
+        <div class="plan-title">PLANO COMPLETO</div>
+        <ul class="plan-completo-items">
+          <li class="plan-completo-item">
+            <div class="plan-completo-item-header"><span>✅</span><span class="plan-completo-item-name">O Adubo Milagroso</span></div>
+            <div class="plan-completo-item-desc">A fórmula natural completa com os 3 ingredientes e proporção exata para ativar a frutificação</div>
+            <div class="plan-completo-item-anchor"><span class="plan-completo-item-old">De R$47,00</span><span class="plan-completo-item-tag">Incluído</span></div>
+          </li>
+          <li class="plan-completo-item">
+            <div class="plan-completo-item-header"><span>✅</span><span class="plan-completo-item-name">Cultivando Frutíferas em Vaso</span></div>
+            <div class="plan-completo-item-desc">Tudo que você precisa saber antes de plantar — vaso, terra e cuidados iniciais</div>
+            <div class="plan-completo-item-anchor"><span class="plan-completo-item-old">De R$27,00</span><span class="plan-completo-item-tag">Grátis</span></div>
+          </li>
+          <li class="plan-completo-item">
+            <div class="plan-completo-item-header"><span>✅</span><span class="plan-completo-item-name">Calendário de Colheita por Espécie</span></div>
+            <div class="plan-completo-item-desc">Saiba exatamente quando cada fruta produz na sua região do Brasil</div>
+            <div class="plan-completo-item-anchor"><span class="plan-completo-item-old">De R$17,00</span><span class="plan-completo-item-tag">Grátis</span></div>
+          </li>
+          <li class="plan-completo-item">
+            <div class="plan-completo-item-header"><span>✅</span><span class="plan-completo-item-name">100 Receitas com as Frutas que Você Vai Colher</span></div>
+            <div class="plan-completo-item-desc">Sucos, geleias e sobremesas prontas em menos de 10 minutos</div>
+            <div class="plan-completo-item-anchor"><span class="plan-completo-item-old">De R$27,00</span><span class="plan-completo-item-tag">Grátis</span></div>
+          </li>
         </ul>
-        <div class="plan-total-old">De R$118,00</div>
-        <div class="plan-price">R$27,90</div>
-        <div class="plan-period">à vista no PIX</div>
-        <a href="#planos" class="btn btn-sm" style="width:100%; text-align:center; margin-top:1rem;">QUERO O PLANO COMPLETO</a>
+        <div class="plan-total-box">
+          <div class="plan-total-label">Valor total</div>
+          <div class="plan-total-old-price">De R$118,00</div>
+          <div class="plan-total-label">Por apenas</div>
+          <div class="plan-total-price">R$27,90</div>
+          <div class="plan-total-period">à vista no PIX</div>
+        </div>
+        <a href="#planos" class="btn-completo">QUERO O PLANO COMPLETO</a>
+        <p class="plan-footnote-white">Pagamento único · Garantia 7 dias</p>
       </div>
 
     </div>

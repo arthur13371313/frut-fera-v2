@@ -50,7 +50,7 @@
       text-align: center;
     }
     .hero h1 {
-      font-size: 1.3rem;
+      font-size: clamp(0.8rem, 3.8vw, 1.9rem);
       font-weight: 900;
       color: #fff;
       text-transform: uppercase;
@@ -58,9 +58,6 @@
       line-height: 1.25;
       max-width: 820px;
       margin: 0 auto 1.25rem;
-    }
-    @media (min-width: 640px) {
-      .hero h1 { font-size: 1.9rem; }
     }
     .hero .subheadline {
       font-size: clamp(1rem, 2vw, 1.2rem);

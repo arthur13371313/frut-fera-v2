@@ -4,8 +4,9 @@
   "framework": null,
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/", "destination": "/frutiferas.html" },
-    { "source": "/frutiferas", "destination": "/frutiferas.html" }
+    { "source": "/", "destination": "/segredo-dos-frutos.html" },
+    { "source": "/frutiferas", "destination": "/frutiferas.html" },
+    { "source": "/pagina-anterior", "destination": "/pagina-anterior.html" }
   ],
   "headers": [
     {

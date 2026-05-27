@@ -291,40 +291,21 @@
       margin: 0 auto 2.5rem;
       line-height: 1.6;
     }
-    .ba-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      max-width: 760px;
-      margin: 0 auto;
-    }
-    .ba-item { position: relative; }
-    .ba-placeholder {
-      background: #d0ccc5;
-      border-radius: 1rem;
-      height: 320px;
-      overflow: hidden;
+    .before-after-image {
       display: flex;
-      align-items: center;
       justify-content: center;
+      margin-top: 32px;
     }
-    .ba-placeholder img {
+    .before-after-image img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      max-width: 1000px;
+      border-radius: 16px;
+      display: block;
+      box-shadow: 0 10px 30px rgba(0,0,0,.12);
     }
-    .ba-label {
-      display: inline-block;
-      margin-top: 0.75rem;
-      font-weight: 800;
-      font-size: 0.9375rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 0.3rem 1.25rem;
-      border-radius: 2rem;
+    @media (max-width: 768px) {
+      .before-after-image img { max-width: 100%; }
     }
-    .ba-label.antes { background: #e8e0d0; color: #888; }
-    .ba-label.depois { background: var(--green); color: #fff; }
 
     /* ── STEPS ── */
     .steps-section {
@@ -635,7 +616,6 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 680px) {
       .benefits-grid { grid-template-columns: 1fr; }
-      .ba-grid { grid-template-columns: 1fr; }
       .bonus-card { padding: 1.25rem 1rem; align-items: flex-start; }
       .bonus-icon { font-size: 1.4rem; }
       .bonus-body { text-align: left; }
@@ -794,15 +774,8 @@ src="https://www.facebook.com/tr?id=1001844958969175&ev=PageView&noscript=1"/>
   <!-- BEFORE / AFTER -->
   <section class="before-after-section">
     <p class="sub">Existe um motivo pelo qual sua planta cresce mas não produz. E não é o que você está pensando.</p>
-    <div class="ba-grid">
-      <div class="ba-item">
-        <div class="ba-placeholder"><picture><source srcset="images/antes.webp" type="image/webp"><img src="images/antes.jpeg" alt="Planta antes — sem frutos" loading="lazy" /></picture></div>
-        <div><span class="ba-label antes">ANTES</span></div>
-      </div>
-      <div class="ba-item">
-        <div class="ba-placeholder"><picture><source srcset="images/depois.webp" type="image/webp"><img src="images/depois.jpeg" alt="Planta depois — cheia de frutos" loading="lazy" /></picture></div>
-        <div><span class="ba-label depois">DEPOIS</span></div>
-      </div>
+    <div class="before-after-image">
+      <img src="images/antes-depois.jpg" alt="Resultado antes e depois utilizando o adubo natural" />
     </div>
   </section>
 

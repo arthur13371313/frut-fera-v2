@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Última Chance — Plano de Início Rápido</title>
+  <title>Última Chance — Plano Anti-Pragas</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -295,23 +295,23 @@
 </head>
 <body>
 
-<div class="topbar">⚠️ Última oferta — não aparece novamente!</div>
+<div class="topbar">⚠️ Última chance — oferta exclusiva, não volta depois!</div>
 
 <main class="hero">
-  <span class="tag">Oferta de última chance</span>
+  <span class="tag">Desconto especial de última hora</span>
 
-  <h1>Ok, sem problemas. Mas você sabe o que fazer<br><span>nos próximos 14 dias?</span></h1>
+  <h1>Espera! O mesmo Plano Anti-Pragas<br><span>por um preço ainda menor</span></h1>
 
   <p class="subtitle">
-    Os primeiros 14 dias são os mais críticos de qualquer cultivo.
-    É quando a maioria das plantas morre — e quem souber passar dessa fase
-    <strong>colhe, quem não souber, recomeça do zero.</strong>
+    Como você não quis aproveitar, estamos fazendo uma concessão especial.
+    O mesmo protocolo completo de proteção —
+    <strong>agora por R$ 14,90. Só desta vez.</strong>
   </p>
 
   <div class="warning-box">
-    🍂 <strong>Você sabia?</strong> A maioria das mudas morre na primeira semana
-    por erros simples de rega e adubação que o cultivador nem percebe.
-    O Plano de Início Rápido existe para que isso não aconteça com você.
+    🪲 <strong>Atenção:</strong> Suas plantas vão crescer mais rápido com o Plano Adubo
+    e isso atrai mais pragas. Esta é a última oportunidade de se proteger
+    com desconto — depois só pelo preço cheio.
   </div>
 
   <!-- TIMER -->
@@ -333,24 +333,24 @@
   <!-- PRODUCT CARD -->
   <div class="card">
     <div class="card-header">
-      <div class="product-icon">📅</div>
+      <div class="product-icon">🛡️</div>
       <div class="product-name">
-        Plano de Início Rápido
-        <small>Guia diário dos 14 dias mais críticos do cultivo</small>
+        Plano Anti-Pragas Completo
+        <small>Protocolo de proteção para plantas adubadas</small>
       </div>
     </div>
 
     <ul class="benefits">
-      <li><span>O que fazer <strong>exatamente hoje, amanhã e nos próximos 14 dias</strong> — sem precisar adivinhar nada</span></li>
-      <li><span>Como regar corretamente na primeira semana sem encharcar nem deixar secar</span></li>
-      <li><span>Os <strong>3 sinais de alerta</strong> que aparecem antes da planta morrer — e como reverter</span></li>
-      <li><span>Protocolo de adubação para os primeiros dias que turbinam o enraizamento</span></li>
-      <li><span>Funciona para qualquer frutífera em vaso, quintal ou jardim pequeno</span></li>
+      <li><span>Identifique e elimine as <strong>7 pragas mais comuns</strong> em plantas adubadas antes que se espalhem</span></li>
+      <li><span>Protocolo de prevenção semanal — menos de 5 minutos por planta</span></li>
+      <li><span>Receitas 100% naturais que <strong>não interferem no adubo</strong> nem prejudicam os frutos</span></li>
+      <li><span>O que fazer nas <strong>primeiras 24h</strong> quando você detectar uma praga</span></li>
+      <li><span>Funciona para plantas de interior, horta, jardim e pomar</span></li>
     </ul>
 
     <div class="price-row">
-      <span class="price-old">De R$ 37,00</span>
-      <span class="price-new">R$ 17,90</span>
+      <span class="price-old">De R$ 24,70</span>
+      <span class="price-new">R$ 14,90</span>
     </div>
     <p class="price-note">Pagamento único — só aparece agora, não volta depois.</p>
 
@@ -364,10 +364,10 @@
         offer-type="downsell"
         upsell-reject-url="members_area"
       >
-        Sim! Quero garantir meus primeiros 14 dias →
+        Sim! Quero o Plano Anti-Pragas por R$ 14,90 →
       </cakto-upsell-accept>
       <cakto-upsell-reject upsell-reject-url="members_area">
-        Não, obrigado — vou descobrir sozinho o que fazer a cada dia
+        Não, obrigado — vou arriscar perder minhas plantas para as pragas
       </cakto-upsell-reject>
     </cakto-upsell-buttons>
   </div>
@@ -421,8 +421,8 @@ document.addEventListener('DOMContentLoaded', function() {
   if (btn) {
     btn.addEventListener('click', function() {
       fbq('track', 'InitiateCheckout', {
-        content_name: 'Plano Início Rápido — Downsell',
-        value: 17.90,
+        content_name: 'Plano Anti-Pragas — Downsell',
+        value: 14.90,
         currency: 'BRL'
       });
     });

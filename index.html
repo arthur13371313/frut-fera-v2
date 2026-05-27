@@ -270,14 +270,17 @@
     .before-after-image {
       display: flex;
       justify-content: center;
+      align-items: flex-start;
       margin-top: 32px;
     }
     .before-after-image img {
       width: 100%;
+      height: auto;
       max-width: 1000px;
       border-radius: 16px;
       display: block;
       box-shadow: 0 10px 30px rgba(0,0,0,.12);
+      object-fit: contain;
     }
     @media (max-width: 768px) {
       .before-after-image img { max-width: 100%; }

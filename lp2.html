@@ -236,6 +236,7 @@
         <img src="/images/hero.jpg" alt="Mockup do produto Como Cultivar Árvores Frutíferas" fetchpriority="high" loading="eager" decoding="sync" width="700" height="700">
       </picture>
     </div>
+    <p style="font-size:.9rem;color:rgba(255,255,255,.75);margin-top:16px;margin-bottom:24px;line-height:1.6;max-width:560px;margin-left:auto;margin-right:auto">"O segredo que os grandes fabricantes de adubo escondem de você: o produto deles é feito para fazer sua planta crescer bonita, mas é o adubo natural que é feito para que a sua árvore tire frutos."</p>
     <div class="hero-bullets">
       <div class="hero-bullet">🌱 Passo a passo na ordem certa: você sabe o que fazer hoje, amanhã e na semana que vem</div>
       <div class="hero-bullet">🏠 Funciona em apartamento, sem varanda, sem quintal, sem experiência prévia</div>
@@ -265,6 +266,7 @@
       <li>💧 Não sabe se está regando de mais, de menos, na hora errada</li>
       <li>🏢 Acha que apartamento não é lugar pra planta frutífera — então nem tenta</li>
       <li>😞 Seu ambiente parece uma caixa: sem verde, sem vida, sem natureza nenhuma</li>
+      <li>🪾 Já plantou, a árvore cresceu bonita, mas não conseguiu tirar nenhum fruto</li>
     </ul>
     <div class="confusion-callout">
       O problema não é você não ter jeito pra plantar.<br>
@@ -306,8 +308,8 @@
 <!-- BRIDGE IMAGE -->
 <div class="bridge">
   <picture>
-    <source srcset="/images/benefits.webp" type="image/webp">
-    <img src="/images/benefits.jpg" alt="Acerola frutificando em vaso dentro de casa" loading="lazy" width="448" height="448" style="width:100%;max-width:440px;height:auto;border-radius:20px;display:inline-block;margin:0 auto;box-shadow:0 8px 32px rgba(0,0,0,.13)">
+    <source srcset="/images/benefits-v2.webp" type="image/webp">
+    <img src="/images/benefits-v2.jpg" alt="Acerola frutificando em vaso dentro de casa" loading="lazy" width="448" height="448" style="width:100%;max-width:440px;height:auto;border-radius:20px;display:inline-block;margin:0 auto;box-shadow:0 8px 32px rgba(0,0,0,.13)">
   </picture>
 </div>
 
@@ -587,7 +589,7 @@
           <div class="price-label">Por apenas</div>
           <div class="price-new-green">R$10</div>
         </div>
-        <a href="https://pay.cakto.com.br/wkbaexh_897743" class="btn-essencial">QUERO O PLANO ESSENCIAL</a>
+        <a href="https://pay.cakto.com.br/wkbaexh_897743" class="btn-essencial" onclick="trackCheckout()">QUERO O PLANO ESSENCIAL</a>
         <p class="plan-footnote-light">Pagamento único · Garantia 7 dias</p>
       </div>
 
@@ -637,7 +639,7 @@
           <div class="price-label">Por apenas</div>
           <div class="price-new-neon">R$27</div>
         </div>
-        <a href="https://pay.cakto.com.br/3224aeh_897755" class="btn-completo">QUERO O PLANO COMPLETO</a>
+        <a href="https://pay.cakto.com.br/3224aeh_897755" class="btn-completo" onclick="trackCheckout()">QUERO O PLANO COMPLETO</a>
         <p class="plan-footnote-white">Pagamento único · Garantia 7 dias</p>
       </div>
 
@@ -712,6 +714,41 @@
 <footer>
   © Cultivar Agora · Todos os direitos reservados
 </footer>
+
+<!-- Meta Pixel -->
+<script>
+window.addEventListener('load', function() {
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1001844958969175');
+  fbq('track', 'PageView');
+  fbq('track', 'ViewContent', {
+    content_name: 'Guia Frutíferas em Vaso',
+    content_ids: ['guia-frutiferas'],
+    content_type: 'product',
+    value: 27.00,
+    currency: 'BRL'
+  });
+});
+</script>
+
+<!-- UTMify -->
+<script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
+
+<!-- Meta Pixel InitiateCheckout helper -->
+<script>
+function trackCheckout() {
+  if (typeof window !== 'undefined' && window.fbq) {
+    window.fbq('track', 'InitiateCheckout');
+  }
+}
+</script>
 
 </body>
 </html>

@@ -4,7 +4,7 @@
   "framework": null,
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/", "destination": "/segredo-dos-frutos.html" },
+    { "source": "/", "destination": "/index.html" },
     { "source": "/frutiferas", "destination": "/frutiferas.html" },
     { "source": "/pagina-anterior", "destination": "/pagina-anterior.html" }
   ],
@@ -12,7 +12,13 @@
     {
       "source": "/images/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=2592000, stale-while-revalidate=604800" }
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/(.*).html",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
       ]
     }
   ]

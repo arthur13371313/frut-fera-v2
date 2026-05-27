@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>O Segredo dos Frutos — Faça Sua Frutífera Produzir</title>
+  <link rel="icon" href="data:,">
+  <link rel="preload" as="image" href="images/mockup-640.webp" type="image/webp" imagesrcset="images/mockup-640.webp 640w, images/mockup.webp 934w" imagesizes="(max-width: 680px) 94vw, 600px" fetchpriority="high">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -64,19 +66,16 @@
       line-height: 1.7;
     }
     .mockup-placeholder {
-      background: #d0ccc5;
       border-radius: 1rem;
       max-width: 600px;
       width: 100%;
-      height: 340px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       margin: 0 auto 2rem;
+      overflow: hidden;
       font-size: 1rem;
       color: #666;
       font-weight: 500;
     }
+    .mockup-placeholder img { width: 100%; height: auto; display: block; border-radius: 1rem; }
     .hero .gancho {
       font-size: clamp(0.9rem, 1.8vw, 1.05rem);
       color: rgba(255,255,255,0.75);
@@ -280,17 +279,16 @@
     }
     .ba-item { position: relative; }
     .ba-placeholder {
-      background: #d0ccc5;
       border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,.12);
+    }
+    .ba-placeholder img {
+      width: 100%;
       height: 260px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.9375rem;
-      color: #666;
-      font-weight: 500;
-      text-align: center;
-      padding: 1rem;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
     }
     .ba-label {
       display: inline-block;
@@ -643,7 +641,7 @@
   <section class="hero">
     <h1>O ADUBO CASEIRO QUE VOCÊ PREPARA EM MINUTOS, QUE FAZ SUA FRUTÍFERA PRODUZIR FRUTOS.</h1>
     <p class="subheadline">O adubo que você compra na loja foi feito para fazer a planta crescer, não para produzir fruto. Três ingredientes naturais que você tem em casa mudam esse sinal em semanas.</p>
-    <div class="mockup-placeholder">[ Inserir imagem do mockup aqui ]</div>
+    <div class="mockup-placeholder"><picture><source srcset="images/mockup-640.webp 640w, images/mockup.webp 934w" sizes="(max-width: 680px) 94vw, 600px" type="image/webp"><img src="images/mockup.jpg" alt="O Segredo dos Frutos" fetchpriority="high" decoding="sync" width="934" height="909" /></picture></div>
     <p class="gancho">Uma aplicação por mês, com o que você já tem em casa — e sua planta finalmente entra no modo de produção.</p>
     <ul class="bullets">
       <li><span class="ico">✅</span> Funciona para qualquer frutífera em vaso, quintal ou jardim pequeno</li>
@@ -744,11 +742,11 @@
     <p class="sub">Existe um motivo pelo qual sua planta cresce mas não produz. E não é o que você está pensando.</p>
     <div class="ba-grid">
       <div class="ba-item">
-        <div class="ba-placeholder">[ Foto ANTES — planta sem fruto ]</div>
+        <div class="ba-placeholder"><img src="images/antes.webp" alt="Planta antes de receber os nutrientes certos" loading="lazy" decoding="async" width="853" height="1600"></div>
         <div><span class="ba-label antes">ANTES</span></div>
       </div>
       <div class="ba-item">
-        <div class="ba-placeholder">[ Foto DEPOIS — planta com frutos ]</div>
+        <div class="ba-placeholder"><img src="images/depois.webp" alt="Planta depois da aplicação do adubo natural" loading="lazy" decoding="async" width="853" height="1600"></div>
         <div><span class="ba-label depois">DEPOIS</span></div>
       </div>
     </div>

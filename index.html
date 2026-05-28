@@ -622,12 +622,12 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '802910671880285');
+fbq('init', '1001844958969175');
 fbq('track', 'PageView');
 </script>
 <noscript>
 <img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=802910671880285&ev=PageView&noscript=1"/>
+src="https://www.facebook.com/tr?id=1001844958969175&ev=PageView&noscript=1"/>
 </noscript>
 <!-- End Meta Pixel Code -->
 <!-- UTMify -->
@@ -860,7 +860,7 @@ src="https://www.facebook.com/tr?id=802910671880285&ev=PageView&noscript=1"/>
           <div class="plan-val-price">R$17,90</div>
           <div class="plan-val-period">à vista no PIX</div>
         </div>
-        <a href="https://pay.cakto.com.br/wkbaexh_902259" class="btn-basico" onclick="fbq('track', 'InitiateCheckout');">QUERO A RECEITA</a>
+        <a href="https://pay.cakto.com.br/wkbaexh_902259" class="btn-basico" data-checkout="basico">QUERO A RECEITA</a>
         <p class="plan-footnote">Pagamento único · Garantia 7 dias</p>
       </div>
 
@@ -893,7 +893,7 @@ src="https://www.facebook.com/tr?id=802910671880285&ev=PageView&noscript=1"/>
           <div class="plan-total-price">R$27,90</div>
           <div class="plan-total-period">à vista no PIX</div>
         </div>
-        <a href="https://pay.cakto.com.br/3224aeh_902251" class="btn-completo" onclick="fbq('track', 'InitiateCheckout');">QUERO O KIT COMPLETO</a>
+        <a href="https://pay.cakto.com.br/3224aeh_902251" class="btn-completo" data-checkout="completo">QUERO O KIT COMPLETO</a>
         <p class="plan-footnote-white">Pagamento único · Garantia 7 dias</p>
       </div>
 
@@ -1009,6 +1009,25 @@ src="https://www.facebook.com/tr?id=802910671880285&ev=PageView&noscript=1"/>
         });
       });
     })();
+  </script>
+
+  <!-- InitiateCheckout — dispara pixel antes de redirecionar -->
+  <script>
+    document.querySelectorAll('a[data-checkout]').forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        var url  = btn.href;
+        var plan = btn.getAttribute('data-checkout') === 'basico' ? 'Plano Básico — A Receita' : 'Plano Completo — Kit Completo';
+        if (typeof fbq === 'function') {
+          fbq('track', 'InitiateCheckout', { content_name: plan, currency: 'BRL' }, {
+            eventCallback: function() { window.location.href = url; },
+            eventTimeout: 500
+          });
+        } else {
+          window.location.href = url;
+        }
+      });
+    });
   </script>
 </body>
 </html>

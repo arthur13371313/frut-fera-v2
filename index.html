@@ -618,53 +618,26 @@
   </style>
 <!-- Meta Pixel Code -->
 <script>
-window.__fbPixelQueue = [['init', '1001844958969175'], ['track', 'PageView']];
-window.fbq = function() { window.__fbPixelQueue.push([].slice.call(arguments)); };
-window.trackCheckout = function() { window.fbq('track', 'InitiateCheckout'); };
-
-(function() {
-  var loaded = false;
-  function loadFacebookPixel() {
-    if (loaded) return;
-    loaded = true;
-    var queued = window.__fbPixelQueue || [];
-    delete window.fbq;
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    queued.forEach(function(args) { window.fbq.apply(null, args); });
-  }
-  function loadUtmify() {
-    var script = document.createElement('script');
-    script.src = 'https://cdn.utmify.com.br/scripts/utms/latest.js';
-    script.async = true;
-    script.defer = true;
-    script.setAttribute('data-utmify-prevent-xcod-sck', '');
-    script.setAttribute('data-utmify-prevent-subids', '');
-    document.head.appendChild(script);
-  }
-  function loadMarketingScripts() {
-    loadFacebookPixel();
-    loadUtmify();
-  }
-  ['pointerdown', 'keydown', 'touchstart', 'scroll'].forEach(function(eventName) {
-    window.addEventListener(eventName, loadMarketingScripts, { once: true, passive: true });
-  });
-  window.addEventListener('load', function() {
-    setTimeout(loadMarketingScripts, 3500);
-  });
-})();
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '802910671880285');
+fbq('track', 'PageView');
 </script>
 <noscript>
 <img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1001844958969175&ev=PageView&noscript=1"/>
+src="https://www.facebook.com/tr?id=802910671880285&ev=PageView&noscript=1"/>
 </noscript>
 <!-- End Meta Pixel Code -->
+<!-- UTMify -->
+<script async src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+  data-utmify-prevent-xcod-sck
+  data-utmify-prevent-subids></script>
 </head>
 <body>
 

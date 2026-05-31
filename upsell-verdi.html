@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Verdi — Acompanhe sua planta semana a semana</title>
+  <title>Verdi — Saiba sempre o que fazer com sua planta</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -14,17 +14,12 @@
       min-height: 100vh;
     }
 
-    .page {
-      width: min(94vw, 560px);
-      margin: 0 auto;
-      padding: 36px 0 56px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0;
+    /* ── BADGE ── */
+    .badge-wrap {
+      text-align: center;
+      padding: 28px 20px 0;
     }
 
-    /* 1. BADGE */
     .badge {
       display: inline-block;
       background: #0f7865;
@@ -35,36 +30,56 @@
       text-transform: uppercase;
       padding: 6px 18px;
       border-radius: 999px;
-      margin-bottom: 28px;
     }
 
-    /* 2. HEADLINE */
+    /* ── IMAGEM ANTES/DEPOIS ── */
+    .hero-image {
+      width: 100%;
+      margin-top: 24px;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ── CONTEÚDO CENTRAL ── */
+    .page {
+      width: min(94vw, 560px);
+      margin: 0 auto;
+      padding: 0 0 56px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ── HEADLINE ── */
     h1 {
-      font-size: clamp(1.5rem, 5.5vw, 2rem);
+      font-size: clamp(1.45rem, 5.2vw, 1.95rem);
       font-weight: 900;
       color: #0f7865;
       text-align: center;
-      line-height: 1.25;
-      margin-bottom: 20px;
+      line-height: 1.28;
+      margin: 32px 0 20px;
     }
 
-    /* 3. SUBTÍTULO */
+    /* ── SUBTÍTULO ── */
     .subtitle {
-      font-size: clamp(0.975rem, 3vw, 1.075rem);
+      font-size: clamp(0.9375rem, 2.8vw, 1.05rem);
       color: #444;
       text-align: center;
-      line-height: 1.75;
+      line-height: 1.78;
       margin-bottom: 40px;
     }
 
-    /* 4. COMO FUNCIONA */
+    /* ── COMO USAR ── */
     .how-title {
-      font-size: clamp(1rem, 3.2vw, 1.125rem);
+      font-size: clamp(0.9375rem, 3vw, 1.075rem);
       font-weight: 700;
       color: #0f7865;
       text-align: center;
-      margin-bottom: 16px;
-      align-self: flex-start;
+      margin-bottom: 14px;
       width: 100%;
     }
 
@@ -96,12 +111,12 @@
     .step-text {
       font-size: 0.9375rem;
       color: #333;
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
-    /* 5. BULLETS */
+    /* ── BULLETS ── */
     .bullets-title {
-      font-size: clamp(1rem, 3.2vw, 1.125rem);
+      font-size: clamp(0.9375rem, 3vw, 1.075rem);
       font-weight: 700;
       color: #0f7865;
       text-align: left;
@@ -114,7 +129,7 @@
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 13px;
       margin-bottom: 40px;
     }
 
@@ -124,16 +139,30 @@
       gap: 10px;
       font-size: 0.9375rem;
       color: #333;
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
     .bullets li .ico {
       flex-shrink: 0;
       font-size: 1rem;
-      margin-top: 2px;
+      margin-top: 3px;
     }
 
-    /* 6. BLOCO DE OFERTA */
+    /* ── BLOCO EMOCIONAL ── */
+    .emotional {
+      width: 100%;
+      background: #fff;
+      border-left: 4px solid #0f7865;
+      border-radius: 0 12px 12px 0;
+      padding: 20px 22px;
+      margin-bottom: 40px;
+      font-size: 0.9375rem;
+      color: #444;
+      line-height: 1.78;
+      font-style: italic;
+    }
+
+    /* ── BLOCO DE OFERTA ── */
     .offer-box {
       width: 100%;
       background: #fff;
@@ -171,7 +200,7 @@
       color: #0f7865;
     }
 
-    /* 7. BOTÕES CAKTO */
+    /* ── BOTÕES CAKTO ── */
     .cakto-wrap {
       width: 100%;
       margin-bottom: 32px;
@@ -190,7 +219,7 @@
       text-transform: uppercase;
       cursor: pointer;
       transition: filter 0.2s ease, transform 0.15s ease;
-      padding: 0 24px;
+      padding: 0 20px;
     }
 
     cakto-upsell-accept::part(button):hover {
@@ -211,7 +240,7 @@
       line-height: 1.5;
     }
 
-    /* 8. RODAPÉ */
+    /* ── RODAPÉ ── */
     .guarantee {
       font-size: 0.8125rem;
       color: #aaa;
@@ -223,22 +252,31 @@
     @media (max-width: 400px) {
       .offer-box { padding: 24px 18px; }
       .step-card { padding: 14px 16px; }
+      .emotional { padding: 16px 18px; }
     }
   </style>
 </head>
 <body>
+
+  <!-- 1. BADGE -->
+  <div class="badge-wrap">
+    <span class="badge">Oferta especial — disponível apenas agora</span>
+  </div>
+
+  <!-- 2. IMAGEM ANTES/DEPOIS -->
+  <div class="hero-image">
+    <img src="/images/antes-depois-verdi.jpg" alt="Antes: perdida. Depois: no controle." />
+  </div>
+
   <div class="page">
 
-    <!-- 1. BADGE -->
-    <span class="badge">Oferta especial — disponível apenas agora</span>
+    <!-- 3. HEADLINE -->
+    <h1>Você tem a receita. Mas e agora — o que fazer primeiro? E depois? E se der algo errado?</h1>
 
-    <!-- 2. HEADLINE -->
-    <h1>Você tem a receita. Agora saiba exatamente se sua planta está reagindo bem.</h1>
+    <!-- 4. SUBTÍTULO -->
+    <p class="subtitle">É normal ficar em dúvida. O Verdi IA funciona como um guia do seu lado — você tira uma foto da planta e ele te diz exatamente o que está acontecendo e o que fazer a seguir. Em linguagem simples, sem complicação.</p>
 
-    <!-- 3. SUBTÍTULO -->
-    <p class="subtitle">Daqui a alguns dias você vai olhar para a planta e se perguntar: está funcionando? O Verdi analisa a foto que você tira com o celular e te diz exatamente o que está acontecendo — em linguagem simples, sem termos complicados.</p>
-
-    <!-- 4. COMO FUNCIONA -->
+    <!-- 5. COMO USAR -->
     <p class="how-title">Como usar — é mais simples do que parece:</p>
     <div class="steps">
       <div class="step-card">
@@ -251,21 +289,26 @@
       </div>
       <div class="step-card">
         <span class="step-icon">✅</span>
-        <p class="step-text">Recebe o diagnóstico completo na tela — o que tem, o que fazer e como corrigir</p>
+        <p class="step-text">O Verdi te diz o que está acontecendo e o que fazer a seguir — sem termos complicados</p>
       </div>
     </div>
 
-    <!-- 5. BULLETS -->
-    <p class="bullets-title">O que o Verdi identifica pela foto:</p>
+    <!-- 6. BULLETS -->
+    <p class="bullets-title">O Verdi te diz exatamente:</p>
     <ul class="bullets">
-      <li><span class="ico">🌿</span><span>Folha amarelando ou caindo sem motivo aparente</span></li>
-      <li><span class="ico">🌿</span><span>Sinais de praga ou fungo antes de virar problema grave</span></li>
-      <li><span class="ico">🌿</span><span>Se a planta está com excesso ou falta de água</span></li>
+      <li><span class="ico">🌿</span><span>O que sua planta está sinalizando agora</span></li>
       <li><span class="ico">🌿</span><span>Se o Adubo Milagroso está fazendo efeito ou precisa de ajuste</span></li>
-      <li><span class="ico">🌿</span><span>Qualquer sinal de que algo está errado — antes que piore</span></li>
+      <li><span class="ico">🌿</span><span>O que fazer esta semana para sua planta continuar evoluindo</span></li>
+      <li><span class="ico">🌿</span><span>Se tem algo errado — antes que vire um problema maior</span></li>
+      <li><span class="ico">🌿</span><span>Qual o próximo passo, sempre que você tiver dúvida</span></li>
     </ul>
 
-    <!-- 6. BLOCO DE OFERTA -->
+    <!-- 7. BLOCO EMOCIONAL -->
+    <blockquote class="emotional">
+      A maioria das pessoas que cuida de frutífera em casa sabe o que quer: ver a planta dar fruto. O que falta não é dedicação — é saber exatamente o que fazer em cada momento. O Verdi resolve isso.
+    </blockquote>
+
+    <!-- 8. BLOCO DE OFERTA -->
     <div class="offer-box">
       <p class="offer-label">Acesso vitalício</p>
       <p class="offer-price">R$37,90</p>
@@ -273,7 +316,7 @@
       <p class="offer-highlight">Diagnósticos ilimitados, para sempre.</p>
     </div>
 
-    <!-- 7. BOTÕES CAKTO -->
+    <!-- 9. BOTÕES CAKTO -->
     <div class="cakto-wrap">
       <meta charset="UTF-8">
       <cakto-upsell-buttons>
@@ -286,17 +329,17 @@
           offer-type="upsell"
           upsell-reject-url="https://cultivaragora.store/verdi-lite"
         >
-          SIM, QUERO ACOMPANHAR MINHA PLANTA COM IA
+          SIM, QUERO SABER SEMPRE O QUE FAZER
         </cakto-upsell-accept>
         <cakto-upsell-reject
           upsell-reject-url="https://cultivaragora.store/verdi-lite"
         >
-          Não, vou descobrir sozinha se está funcionando
+          Não, vou continuar descobrindo sozinha
         </cakto-upsell-reject>
       </cakto-upsell-buttons>
     </div>
 
-    <!-- 8. RODAPÉ -->
+    <!-- 10. RODAPÉ -->
     <p class="guarantee">🔒 Garantia de 7 dias. Se não fizer sentido para você, é só pedir reembolso — sem burocracia.</p>
 
   </div>

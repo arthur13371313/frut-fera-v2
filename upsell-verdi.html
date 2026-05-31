@@ -3,317 +3,279 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Verdi IA - Diagnóstico Inteligente para Plantas</title>
+  <title>Verdi — Acompanhe sua planta semana a semana</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
-      background:
-        radial-gradient(circle at 20% 0%, rgba(46, 204, 82, .18), transparent 30%),
-        radial-gradient(circle at 90% 10%, rgba(255, 203, 91, .14), transparent 26%),
-        #0d1a12;
-      color: #f3fff6;
+      background: #F8F4EF;
+      color: #2c2c2c;
       min-height: 100vh;
     }
 
-    .topbar {
-      background: #f2b84b;
-      color: #1d2418;
-      text-align: center;
-      padding: 10px 16px;
-      font-size: 14px;
-      font-weight: 800;
-      letter-spacing: .4px;
-      text-transform: uppercase;
-    }
-
-    main {
-      width: min(92vw, 780px);
+    .page {
+      width: min(94vw, 560px);
       margin: 0 auto;
-      padding: 42px 0 46px;
-    }
-
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(46, 204, 82, .14);
-      border: 1px solid rgba(46, 204, 82, .32);
-      color: #80f29a;
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      padding: 7px 16px;
-      border-radius: 999px;
-      margin-bottom: 18px;
-    }
-
-    .hero { text-align: center; }
-
-    h1 {
-      font-size: clamp(30px, 5vw, 48px);
-      line-height: 1.12;
-      color: #fff;
-      margin-bottom: 16px;
-    }
-
-    h1 span { color: #80f29a; }
-
-    .subtitle {
-      font-size: 18px;
-      color: #c4d7c9;
-      line-height: 1.6;
-      max-width: 640px;
-      margin: 0 auto 28px;
-    }
-
-    .timer-wrap {
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 14px;
-      padding: 18px 20px;
-      max-width: 380px;
-      margin: 0 auto 30px;
-      box-shadow: 0 16px 50px rgba(0,0,0,.18);
-    }
-
-    .timer-label {
-      font-size: 13px;
-      color: #f2b84b;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 10px;
-    }
-
-    .timer {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-    }
-
-    .timer-unit {
+      padding: 36px 0 56px;
       display: flex;
       flex-direction: column;
       align-items: center;
+      gap: 0;
     }
 
-    .timer-unit span:first-child {
-      font-size: 36px;
-      font-weight: 950;
+    /* 1. BADGE */
+    .badge {
+      display: inline-block;
+      background: #0f7865;
       color: #fff;
-      line-height: 1;
-      font-variant-numeric: tabular-nums;
-    }
-
-    .timer-unit small {
-      font-size: 11px;
-      color: #94ad99;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      margin-top: 4px;
-      letter-spacing: .8px;
+      padding: 6px 18px;
+      border-radius: 999px;
+      margin-bottom: 28px;
     }
 
-    .card {
-      background: linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.045));
-      border: 1px solid rgba(255,255,255,.14);
-      border-radius: 22px;
-      padding: 28px;
-      box-shadow: 0 22px 70px rgba(0,0,0,.28);
-    }
-
-    .card-header {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 24px;
-      text-align: left;
-    }
-
-    .product-icon {
-      width: 62px;
-      height: 62px;
-      border-radius: 18px;
-      background: linear-gradient(135deg, #2ecc52, #0f7865);
-      display: grid;
-      place-items: center;
-      font-size: 32px;
-      flex-shrink: 0;
-    }
-
-    .product-name {
-      font-size: 24px;
+    /* 2. HEADLINE */
+    h1 {
+      font-size: clamp(1.5rem, 5.5vw, 2rem);
       font-weight: 900;
-      color: #fff;
-      line-height: 1.15;
-    }
-
-    .product-name small {
-      display: block;
-      font-size: 14px;
-      color: #a9c2ae;
-      font-weight: 600;
-      margin-top: 5px;
-    }
-
-    .benefits {
-      list-style: none;
-      display: grid;
-      gap: 12px;
-      margin-bottom: 26px;
-    }
-
-    .benefits li {
-      display: flex;
-      gap: 11px;
-      line-height: 1.5;
-      color: #e5f3e8;
-      font-size: 16px;
-      text-align: left;
-    }
-
-    .benefits li::before {
-      content: "✓";
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background: #2ecc52;
-      color: #08210d;
-      display: grid;
-      place-items: center;
-      font-weight: 950;
-      flex-shrink: 0;
-      margin-top: 1px;
-    }
-
-    .price-row {
-      display: flex;
-      align-items: baseline;
-      justify-content: center;
-      gap: 14px;
-      margin-bottom: 6px;
-      flex-wrap: wrap;
-    }
-
-    .price-old {
-      color: #94ad99;
-      text-decoration: line-through;
-      font-size: 18px;
-    }
-
-    .price-new {
-      color: #80f29a;
-      font-size: clamp(38px, 7vw, 56px);
-      font-weight: 950;
-      letter-spacing: -1px;
-    }
-
-    .price-note {
+      color: #0f7865;
       text-align: center;
-      color: #bed2c3;
-      font-size: 14px;
-      margin-bottom: 22px;
+      line-height: 1.25;
+      margin-bottom: 20px;
+    }
+
+    /* 3. SUBTÍTULO */
+    .subtitle {
+      font-size: clamp(0.975rem, 3vw, 1.075rem);
+      color: #444;
+      text-align: center;
+      line-height: 1.75;
+      margin-bottom: 40px;
+    }
+
+    /* 4. COMO FUNCIONA */
+    .how-title {
+      font-size: clamp(1rem, 3.2vw, 1.125rem);
+      font-weight: 700;
+      color: #0f7865;
+      text-align: center;
+      margin-bottom: 16px;
+      align-self: flex-start;
+      width: 100%;
+    }
+
+    .steps {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+
+    .step-card {
+      background: #fff;
+      border: 1px solid #e0dbd4;
+      border-radius: 14px;
+      padding: 18px 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .step-icon {
+      font-size: 1.75rem;
+      flex-shrink: 0;
+      line-height: 1;
+      margin-top: 2px;
+    }
+
+    .step-text {
+      font-size: 0.9375rem;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* 5. BULLETS */
+    .bullets-title {
+      font-size: clamp(1rem, 3.2vw, 1.125rem);
+      font-weight: 700;
+      color: #0f7865;
+      text-align: left;
+      width: 100%;
+      margin-bottom: 14px;
+    }
+
+    .bullets {
+      width: 100%;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+
+    .bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.9375rem;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .bullets li .ico {
+      flex-shrink: 0;
+      font-size: 1rem;
+      margin-top: 2px;
+    }
+
+    /* 6. BLOCO DE OFERTA */
+    .offer-box {
+      width: 100%;
+      background: #fff;
+      border: 1.5px solid #b2d8d0;
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(15, 120, 101, 0.10);
+      padding: 32px 28px;
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .offer-label {
+      font-size: 0.8125rem;
+      color: #888;
+      margin-bottom: 8px;
+    }
+
+    .offer-price {
+      font-size: clamp(2.4rem, 10vw, 3rem);
+      font-weight: 900;
+      color: #0f7865;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .offer-note {
+      font-size: 0.8125rem;
+      color: #888;
+      margin-bottom: 8px;
+    }
+
+    .offer-highlight {
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: #0f7865;
+    }
+
+    /* 7. BOTÕES CAKTO */
+    .cakto-wrap {
+      width: 100%;
+      margin-bottom: 32px;
     }
 
     cakto-upsell-buttons { display: block; }
 
     cakto-upsell-accept::part(button) {
       width: 100%;
-      min-height: 62px;
+      min-height: 58px;
       border: none;
-      border-radius: 14px;
-      font-size: 18px;
-      font-weight: 950;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
       cursor: pointer;
-      box-shadow: 0 14px 34px rgba(46, 204, 82, .28);
-      transition: transform .2s ease, filter .2s ease;
+      transition: filter 0.2s ease, transform 0.15s ease;
+      padding: 0 24px;
     }
 
     cakto-upsell-accept::part(button):hover {
+      filter: brightness(1.08);
       transform: translateY(-2px);
-      filter: brightness(1.05);
     }
 
     cakto-upsell-reject::part(button) {
+      display: block;
       width: 100%;
-      margin-top: 14px;
+      margin-top: 18px;
       background: transparent;
       border: none;
-      color: #9eb2a3;
-      font-size: 14px;
+      color: #999;
+      font-size: 0.875rem;
       cursor: pointer;
-      text-decoration: underline;
-    }
-
-    .guarantee {
-      margin: 22px auto 0;
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 14px;
-      padding: 16px;
-      color: #ccdfd0;
+      text-align: center;
       line-height: 1.5;
-      font-size: 14px;
     }
 
-    @media (max-width: 560px) {
-      main { padding-top: 28px; }
-      .card { padding: 22px; }
-      .card-header { align-items: flex-start; }
-      .product-icon { width: 54px; height: 54px; font-size: 28px; }
+    /* 8. RODAPÉ */
+    .guarantee {
+      font-size: 0.8125rem;
+      color: #aaa;
+      text-align: center;
+      line-height: 1.65;
+      padding-top: 8px;
+    }
+
+    @media (max-width: 400px) {
+      .offer-box { padding: 24px 18px; }
+      .step-card { padding: 14px 16px; }
     }
   </style>
 </head>
 <body>
-  <div class="topbar">Oferta especial liberada após sua compra do Adubo Milagroso</div>
+  <div class="page">
 
-  <main>
-    <section class="hero">
-      <div class="tag">🌿 Diagnóstico com IA</div>
-      <h1>Sua planta cresceu. Agora descubra <span>exatamente</span> o que ela precisa.</h1>
-      <p class="subtitle">
-        Adubar é só o começo. Com o Verdi IA, você envia uma foto da planta e recebe um diagnóstico em segundos,
-        com recomendações práticas para folhas amareladas, pragas, fungos, falta de nutrientes e cuidados diários.
-      </p>
+    <!-- 1. BADGE -->
+    <span class="badge">Oferta especial — disponível apenas agora</span>
 
-      <div class="timer-wrap">
-        <div class="timer-label">Oferta expira em</div>
-        <div class="timer">
-          <div class="timer-unit"><span id="t-min">14</span><small>min</small></div>
-          <div class="timer-unit"><span>:</span><small>&nbsp;</small></div>
-          <div class="timer-unit"><span id="t-sec">59</span><small>seg</small></div>
-        </div>
+    <!-- 2. HEADLINE -->
+    <h1>Você tem a receita. Agora saiba exatamente se sua planta está reagindo bem.</h1>
+
+    <!-- 3. SUBTÍTULO -->
+    <p class="subtitle">Daqui a alguns dias você vai olhar para a planta e se perguntar: está funcionando? O Verdi analisa a foto que você tira com o celular e te diz exatamente o que está acontecendo — em linguagem simples, sem termos complicados.</p>
+
+    <!-- 4. COMO FUNCIONA -->
+    <p class="how-title">Como usar — é mais simples do que parece:</p>
+    <div class="steps">
+      <div class="step-card">
+        <span class="step-icon">📸</span>
+        <p class="step-text">Tira uma foto da sua planta com o celular — do jeito que você já faz normalmente</p>
       </div>
-    </section>
-
-    <div class="card">
-      <div class="card-header">
-        <div class="product-icon">🌱</div>
-        <div class="product-name">
-          Verdi IA
-          <small>Diagnóstico inteligente para plantas por foto</small>
-        </div>
+      <div class="step-card">
+        <span class="step-icon">📤</span>
+        <p class="step-text">Envia a foto pelo aplicativo — leva menos de 1 minuto</p>
       </div>
-
-      <ul class="benefits">
-        <li><span>Envie uma foto e receba um <strong>diagnóstico claro</strong> sobre a saúde da planta.</span></li>
-        <li><span>Identifique sinais de <strong>pragas, fungos, excesso de água e deficiência nutricional</strong>.</span></li>
-        <li><span>Receba recomendações práticas de cuidado para aplicar no mesmo dia.</span></li>
-        <li><span>Use junto com o Adubo Milagroso para acompanhar se a planta está reagindo bem.</span></li>
-        <li><span>Tenha histórico das análises para comparar a evolução das suas plantas.</span></li>
-      </ul>
-
-      <div class="price-row">
-        <span class="price-old">De R$ 59,90/mês</span>
-        <span class="price-new">R$ 34,90/mês</span>
+      <div class="step-card">
+        <span class="step-icon">✅</span>
+        <p class="step-text">Recebe o diagnóstico completo na tela — o que tem, o que fazer e como corrigir</p>
       </div>
-      <p class="price-note">Assinatura mensal. Cancele quando quiser.</p>
+    </div>
 
+    <!-- 5. BULLETS -->
+    <p class="bullets-title">O que o Verdi identifica pela foto:</p>
+    <ul class="bullets">
+      <li><span class="ico">🌿</span><span>Folha amarelando ou caindo sem motivo aparente</span></li>
+      <li><span class="ico">🌿</span><span>Sinais de praga ou fungo antes de virar problema grave</span></li>
+      <li><span class="ico">🌿</span><span>Se a planta está com excesso ou falta de água</span></li>
+      <li><span class="ico">🌿</span><span>Se o Adubo Milagroso está fazendo efeito ou precisa de ajuste</span></li>
+      <li><span class="ico">🌿</span><span>Qualquer sinal de que algo está errado — antes que piore</span></li>
+    </ul>
+
+    <!-- 6. BLOCO DE OFERTA -->
+    <div class="offer-box">
+      <p class="offer-label">Acesso vitalício</p>
+      <p class="offer-price">R$37,90</p>
+      <p class="offer-note">Pagamento único. Sem mensalidade. Sem renovação.</p>
+      <p class="offer-highlight">Diagnósticos ilimitados, para sempre.</p>
+    </div>
+
+    <!-- 7. BOTÕES CAKTO -->
+    <div class="cakto-wrap">
+      <meta charset="UTF-8">
       <cakto-upsell-buttons>
         <cakto-upsell-accept
           bg-color="#0f7865"
@@ -322,33 +284,23 @@
           offer-id="9k4svwj"
           app-base-url="https://app.cakto.com.br"
           offer-type="upsell"
-          upsell-reject-url="members_area"
+          upsell-reject-url="https://cultivaragora.store/verdi-lite"
         >
-          Sim, quero diagnosticar minhas plantas com IA →
+          SIM, QUERO ACOMPANHAR MINHA PLANTA COM IA
         </cakto-upsell-accept>
-        <cakto-upsell-reject upsell-reject-url="members_area">
-          Não, obrigado — vou continuar cuidando sem diagnóstico
+        <cakto-upsell-reject
+          upsell-reject-url="https://cultivaragora.store/verdi-lite"
+        >
+          Não, vou descobrir sozinha se está funcionando
         </cakto-upsell-reject>
       </cakto-upsell-buttons>
     </div>
 
-    <div class="guarantee">
-      <span>🔒</span>
-      <span><strong>Garantia de 7 dias:</strong> teste o Verdi IA sem risco. Se não fizer sentido para você, peça reembolso dentro do prazo.</span>
-    </div>
-  </main>
+    <!-- 8. RODAPÉ -->
+    <p class="guarantee">🔒 Garantia de 7 dias. Se não fizer sentido para você, é só pedir reembolso — sem burocracia.</p>
 
-  <script>
-    let totalSec = 15 * 60;
-    const minEl = document.getElementById('t-min');
-    const secEl = document.getElementById('t-sec');
+  </div>
 
-    setInterval(() => {
-      totalSec = Math.max(0, totalSec - 1);
-      minEl.textContent = String(Math.floor(totalSec / 60)).padStart(2, '0');
-      secEl.textContent = String(totalSec % 60).padStart(2, '0');
-    }, 1000);
-  </script>
   <script type="text/javascript" src="https://caktoscripts.nyc3.cdn.digitaloceanspaces.com/upsell.js"></script>
 </body>
 </html>

@@ -63,28 +63,36 @@
       margin: 32px 0 24px;
     }
 
+    /* ── SEPARADOR ── */
+    .divider {
+      border: none;
+      border-top: 1px solid #E5E0D8;
+      width: 100%;
+      margin: 24px 0;
+    }
+
     /* ── 4. VALIDAÇÃO EMOCIONAL ── */
     .validation {
       font-size: 17px;
       color: #2D2D2D;
       text-align: center;
       line-height: 1.7;
-      margin-bottom: 36px;
+      margin-bottom: 0;
     }
 
     /* ── 5. COMO FUNCIONA ── */
     .how-context {
       font-size: 15px;
       color: #2D2D2D;
-      line-height: 1.75;
-      margin-bottom: 36px;
+      line-height: 1.7;
       display: flex;
       flex-direction: column;
       gap: 14px;
+      margin-bottom: 0;
     }
 
     .how-title {
-      font-size: 17px;
+      font-size: 18px;
       font-weight: 700;
       color: #0f7865;
       text-align: center;
@@ -96,46 +104,47 @@
       display: flex;
       flex-direction: column;
       gap: 12px;
-      margin-bottom: 36px;
+      margin-bottom: 0;
     }
 
     .step {
       background: #FFFFFF;
       border-radius: 12px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
       padding: 16px;
       display: flex;
       align-items: flex-start;
-      gap: 14px;
+      gap: 12px;
     }
 
     .step-icon {
-      font-size: 1.6rem;
+      font-size: 28px;
       line-height: 1;
       flex-shrink: 0;
       margin-top: 1px;
     }
 
     .step-text {
-      font-size: 0.9375rem;
+      font-size: 15px;
       color: #2D2D2D;
       line-height: 1.65;
     }
 
     /* ── 6. BULLETS ── */
     .bullets-title {
-      font-size: 17px;
+      font-size: 18px;
       font-weight: 700;
       color: #0f7865;
-      margin-bottom: 12px;
+      margin-top: 32px;
+      margin-bottom: 16px;
     }
 
     .bullets {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 14px;
-      margin-bottom: 36px;
+      gap: 16px;
+      margin-bottom: 0;
     }
 
     .bullets li {
@@ -163,7 +172,7 @@
       font-size: 15px;
       font-style: italic;
       color: #2D2D2D;
-      line-height: 1.75;
+      line-height: 1.7;
     }
 
     /* ── 8. OFERTA ── */
@@ -274,7 +283,7 @@
     <h1 class="headline">
       Você tem a receita. Mas e agora —
       <span class="c-orange">o que fazer primeiro?</span>
-      E se <span class="c-orange">der algo errado?</span>
+      E se der <span class="c-orange">algo errado?</span>
     </h1>
 
     <!-- 4. VALIDAÇÃO EMOCIONAL -->
@@ -283,11 +292,13 @@
       Ninguém te diz o próximo passo.
     </p>
 
+    <hr class="divider">
+
     <!-- 5. TEXTO EXPLICATIVO -->
     <div class="how-context">
-      <p>Depois que você aplica o adubo, começa a dúvida: será que está funcionando? Estou fazendo certo? O que faço se a folha amarela?</p>
-      <p>Essa dúvida é normal — porque ninguém te acompanha nessa jornada. Você fica sozinha, olhando para a planta, tentando adivinhar se está no caminho certo.</p>
-      <p>O Verdi foi feito exatamente para esse momento. É como ter alguém de confiança do seu lado — alguém que você pode chamar a qualquer hora, que responde de forma simples e te diz exatamente o que fazer. Sem enrolação, sem palavras difíceis, sem precisar esperar.</p>
+      <p>Depois que você aplica o adubo, começa a dúvida: <strong class="c-orange">será que está funcionando?</strong> Estou fazendo certo? <strong class="c-orange">O que faço se a folha amarela?</strong></p>
+      <p>Essa dúvida é normal — porque <strong class="c-orange">ninguém te acompanha nessa jornada</strong>. Você fica sozinha, olhando para a planta, tentando adivinhar se está no caminho certo.</p>
+      <p>O Verdi foi feito exatamente para esse momento. É como ter <strong class="c-green">alguém de confiança do seu lado</strong> — alguém que você pode chamar a qualquer hora, que responde de forma simples e te diz exatamente o que fazer. <strong class="c-green">Sem enrolação, sem palavras difíceis, sem precisar esperar.</strong></p>
     </div>
 
     <!-- 5b. PASSOS -->
@@ -303,7 +314,7 @@
       </div>
       <div class="step">
         <span class="step-icon">✅</span>
-        <p class="step-text">O Verdi te responde: <strong class="c-green">o que está acontecendo</strong>, se o <strong class="c-green">adubo está fazendo efeito</strong>, e <strong class="c-green">o que você deve fazer agora</strong></p>
+        <p class="step-text">O Verdi <strong class="c-green">te responde</strong>: o que está acontecendo, se o adubo está fazendo efeito, e o que você deve fazer agora</p>
       </div>
     </div>
 
@@ -311,26 +322,28 @@
     <p class="bullets-title">Com o Verdi, você vai saber:</p>
     <ul class="bullets">
       <li>
-        <span class="ico">🌿</span>
+        <span class="ico">🌱</span>
         <span>O que sua planta está sinalizando agora, antes que <strong class="c-green">vire problema</strong></span>
       </li>
       <li>
-        <span class="ico">🌿</span>
+        <span class="ico">⚗️</span>
         <span>Se o Adubo está <strong class="c-green">fazendo efeito</strong> ou precisa de ajuste</span>
       </li>
       <li>
-        <span class="ico">🌿</span>
+        <span class="ico">📅</span>
         <span>O que fazer em cada semana, sem precisar adivinhar</span>
       </li>
       <li>
-        <span class="ico">🌿</span>
+        <span class="ico">⚠️</span>
         <span>Se tem algo errado, antes que seja <strong class="c-green">tarde demais</strong></span>
       </li>
       <li>
-        <span class="ico">🌿</span>
+        <span class="ico">👣</span>
         <span><strong class="c-green">Qual o próximo passo</strong>, sempre que você tiver dúvida</span>
       </li>
     </ul>
+
+    <hr class="divider" style="margin: 32px 0;">
 
     <!-- 7. BLOCO EMOCIONAL -->
     <blockquote class="emotional">

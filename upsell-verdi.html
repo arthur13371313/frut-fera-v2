@@ -73,19 +73,22 @@
     }
 
     /* ── 5. COMO FUNCIONA ── */
-    .how-block {
-      background: #FFFFFF;
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-      padding: 24px 20px;
+    .how-context {
+      font-size: 15px;
+      color: #2D2D2D;
+      line-height: 1.75;
       margin-bottom: 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
     }
 
     .how-title {
-      font-size: 16px;
+      font-size: 17px;
       font-weight: 700;
       color: #0f7865;
       text-align: center;
+      margin-top: 32px;
       margin-bottom: 16px;
     }
 
@@ -93,12 +96,14 @@
       display: flex;
       flex-direction: column;
       gap: 12px;
+      margin-bottom: 36px;
     }
 
     .step {
-      background: #F8F4EF;
+      background: #FFFFFF;
       border-radius: 12px;
-      padding: 14px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      padding: 16px;
       display: flex;
       align-items: flex-start;
       gap: 14px;
@@ -278,25 +283,27 @@
       Ninguém te diz o próximo passo.
     </p>
 
-    <!-- 5. COMO FUNCIONA -->
-    <div class="how-block">
-      <p class="step-text" style="margin-bottom:14px;">Depois que você aplica o adubo, começa a dúvida: será que está funcionando? Estou fazendo certo? O que faço se a folha amarela?</p>
-      <p class="step-text" style="margin-bottom:14px;">Essa dúvida é normal — porque ninguém te acompanha nessa jornada. Você fica sozinha, olhando para a planta, tentando adivinhar se está no caminho certo.</p>
-      <p class="step-text" style="margin-bottom:20px;">O Verdi foi feito exatamente para esse momento. É como ter alguém de confiança do seu lado — alguém que você pode chamar a qualquer hora, que responde de forma simples e te diz exatamente o que fazer. Sem enrolação, sem palavras difíceis, sem precisar esperar.</p>
-      <p class="how-title">Veja como é simples de usar:</p>
-      <div class="steps">
-        <div class="step">
-          <span class="step-icon">📸</span>
-          <p class="step-text">Tira uma foto da sua frutífera com o celular</p>
-        </div>
-        <div class="step">
-          <span class="step-icon">📤</span>
-          <p class="step-text">Envia pelo aplicativo</p>
-        </div>
-        <div class="step">
-          <span class="step-icon">✅</span>
-          <p class="step-text">O Verdi te responde: <strong class="c-green">o que está acontecendo</strong>, se o <strong class="c-green">adubo está fazendo efeito</strong>, e <strong class="c-green">o que você deve fazer agora</strong></p>
-        </div>
+    <!-- 5. TEXTO EXPLICATIVO -->
+    <div class="how-context">
+      <p>Depois que você aplica o adubo, começa a dúvida: será que está funcionando? Estou fazendo certo? O que faço se a folha amarela?</p>
+      <p>Essa dúvida é normal — porque ninguém te acompanha nessa jornada. Você fica sozinha, olhando para a planta, tentando adivinhar se está no caminho certo.</p>
+      <p>O Verdi foi feito exatamente para esse momento. É como ter alguém de confiança do seu lado — alguém que você pode chamar a qualquer hora, que responde de forma simples e te diz exatamente o que fazer. Sem enrolação, sem palavras difíceis, sem precisar esperar.</p>
+    </div>
+
+    <!-- 5b. PASSOS -->
+    <p class="how-title">Veja como é simples de usar:</p>
+    <div class="steps">
+      <div class="step">
+        <span class="step-icon">📸</span>
+        <p class="step-text">Tira uma foto da sua frutífera com o celular</p>
+      </div>
+      <div class="step">
+        <span class="step-icon">📤</span>
+        <p class="step-text">Envia pelo aplicativo</p>
+      </div>
+      <div class="step">
+        <span class="step-icon">✅</span>
+        <p class="step-text">O Verdi te responde: <strong class="c-green">o que está acontecendo</strong>, se o <strong class="c-green">adubo está fazendo efeito</strong>, e <strong class="c-green">o que você deve fazer agora</strong></p>
       </div>
     </div>
 

@@ -6,6 +6,7 @@
   "rewrites": [
     { "source": "/", "destination": "/index.html" },
     { "source": "/frutiferas", "destination": "/frutiferas.html" },
+    { "source": "/horta", "destination": "/horta.html" },
     { "source": "/pagina-anterior", "destination": "/pagina-anterior.html" }
   ],
   "headers": [

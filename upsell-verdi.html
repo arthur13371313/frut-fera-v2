@@ -55,7 +55,7 @@
 
     /* ── 3. HEADLINE ── */
     .headline {
-      font-size: 26px;
+      font-size: clamp(1.2rem, 5.2vw, 1.75rem);
       font-weight: 900;
       color: #0f7865;
       text-align: center;
@@ -392,7 +392,7 @@
 
     /* ── RESPONSIVO ── */
     @media (max-width: 390px) {
-      .headline { font-size: 22px; }
+      .headline { font-size: 1.2rem; }
       .offer-price { font-size: 40px; }
       .how-block { padding: 20px 16px; }
     }
@@ -400,15 +400,10 @@
 </head>
 <body>
 
-  <!-- 1. BADGE -->
-  <div class="badge-wrap">
-    <span class="badge">⚠️ LEIA ANTES DE FECHAR</span>
-  </div>
-
   <div class="wrap">
 
     <!-- HEADLINE -->
-    <h1 class="headline">Se a sua planta der um sinal, você vai perceber?</h1>
+    <h1 class="headline">SE A SUA PLANTA DER UM <span style="color:#cc2222;">SINAL NEGATIVO</span>, VOCÊ VAI PERCEBER?</h1>
 
     <!-- SUBTÍTULO -->
     <p class="intro-subtitle">Depois que você aplica o adubo, começa a dúvida: será que está funcionando? Estou fazendo certo? O que faço se a folha ficar amarela?</p>

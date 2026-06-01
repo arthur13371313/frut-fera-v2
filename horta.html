@@ -477,6 +477,7 @@
     @media (max-width:680px) {
       .plans-grid { grid-template-columns:1fr; }
       .plan-card { padding:2rem 1.25rem; }
+      .plan-card.completo { order:-1; }
       .plan-val-price, .plan-total-price { font-size:1.875rem; }
     }
 
@@ -802,6 +803,7 @@ src="https://www.facebook.com/tr?id=2037964553480805&ev=PageView&noscript=1"
   <!-- PLANS -->
   <section class="plans-section" id="planos">
     <h2 class="section-headline white">ESCOLHA SEU PLANO</h2>
+    <p class="section-sub white" style="margin-top:0.5rem;">A maioria escolhe o <strong style="color:#00e676;">Plano Completo</strong>: além da receita, leva os 3 guias que garantem o resultado, por só R$10 a mais.</p>
     <div class="plans-grid">
 
       <!-- BÁSICO -->
@@ -828,13 +830,13 @@ src="https://www.facebook.com/tr?id=2037964553480805&ev=PageView&noscript=1"
           <div class="plan-val-price">R$17,90</div>
           <div class="plan-val-period">à vista no PIX</div>
         </div>
-        <a href="https://pay.cakto.com.br/wkbaexh_902259" class="btn-basico" data-checkout="basico">QUERO A RECEITA</a>
-        <p class="plan-footnote">Pagamento único · Garantia 7 dias</p>
+        <a href="https://pay.cakto.com.br/wkbaexh_902259" class="btn-basico" data-checkout="basico">QUERO SÓ A RECEITA</a>
+        <p class="plan-footnote">Sem os 3 guias bônus · Garantia 7 dias</p>
       </div>
 
       <!-- COMPLETO -->
       <div id="plano-completo" class="plan-card completo">
-        <span class="plan-popular-badge">⭐ MAIS POPULAR</span>
+        <span class="plan-popular-badge">⭐ RECOMENDADO · MAIS ESCOLHIDO</span>
         <div class="plan-title">PLANO COMPLETO</div>
         <div class="plan-completo-banner">✅ TUDO DO PLANO BÁSICO, MAIS:</div>
         <ul class="plan-completo-items">
@@ -860,6 +862,7 @@ src="https://www.facebook.com/tr?id=2037964553480805&ev=PageView&noscript=1"
           <div class="plan-total-label">Por apenas</div>
           <div class="plan-total-price">R$27,90</div>
           <div class="plan-total-period">à vista no PIX</div>
+          <div style="margin-top:.5rem;font-size:.78rem;font-weight:800;color:#00e676;">💚 Você economiza R$90,10</div>
         </div>
         <a href="https://pay.cakto.com.br/3224aeh_902251" class="btn-completo" data-checkout="completo">QUERO O KIT COMPLETO</a>
         <p class="plan-footnote-white">Pagamento único · Garantia 7 dias</p>
